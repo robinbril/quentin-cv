@@ -7,6 +7,9 @@
     <title>Robin Bril | Senior AI Specialist</title>
     <meta name="description" content="Portfolio van Robin Bril, Senior AI Specialist en Data Consultant.">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +25,41 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="bios-header">
+                <span>ROBIN_OS v2.0</span>
+                <span class="mem-info">MEM: 64384K OK</span>
+            </div>
+
+            <div class="bios-output">
+                <div class="boot-line">[<span class="timestamp">12:34:39</span>] BIOS DATE 11/19/25 14:22:54 VER 1.0.4
+                </div>
+                <div class="boot-line">[<span class="timestamp">12:34:39</span>] RAM: 64GB SYSTEM MEMORY OK</div>
+                <div class="boot-line">[<span class="timestamp">12:34:39</span>] INITIALIZING KERNEL...</div>
+                <div class="boot-line">[<span class="timestamp">12:34:39</span>] LOADING MODULES: [REACT] [TAILWIND]
+                    [MOTION]</div>
+                <div class="boot-line">[<span class="timestamp">12:34:39</span>] ESTABLISHING SECURE CONNECTION...</div>
+                <div class="boot-line typing-line">[<span class="timestamp">12:34:39</span>] <span class="typing-text">_
+                        OPTIMIZING NEURAL PATHWAYS...</span></div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-label">
+                    <span>SYSTEM LOAD</span>
+                    <span class="progress-percentage">0%</span>
+                </div>
+                <div class="progress-bar-wrapper">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Noise background overlay -->
+        <div class="noise-overlay"></div>
+    </div>
+
     <div class="cursor-glow"></div>
 
     <nav class="navbar">
@@ -406,7 +444,12 @@
                         <i data-lucide="phone"></i>
                         <span>+31 6 4044 6732</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/robinbril/" target="_blank" rel="noopener noreferrer"
+                    <a href="https://wa.me/31640446732" target="_blank" rel="noopener noreferrer"
+                        class="contact-item whatsapp-cta">
+                        <i data-lucide="message-circle"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/robin-bril" target="_blank" rel="noopener noreferrer"
                         class="contact-item">
                         <i data-lucide="linkedin"></i>
                         <span>LinkedIn Profiel</span>

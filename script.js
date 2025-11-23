@@ -1,4 +1,43 @@
 // ==========================================
+// PRELOADER ANIMATION
+// ==========================================
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    const progressBar = document.getElementById('progress-bar');
+    const progressPercentage = document.querySelector('.progress-percentage');
+
+    let progress = 0;
+    const duration = 3000; // 3 seconds total
+    const incrementTime = 30; // Update every 30ms
+    const totalIncrements = duration / incrementTime;
+    const incrementValue = 100 / totalIncrements;
+
+    // Animate progress bar from 0 to 100%
+    const progressInterval = setInterval(() => {
+        progress += incrementValue;
+
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(progressInterval);
+
+            // Wait a bit at 100%, then fade out
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+
+                // Remove from DOM after fade  
+                setTimeout(() => {
+                    preloader.remove();
+                }, 600);
+            }, 400);
+        }
+
+        // Update progress bar and percentage
+        progressBar.style.width = progress + '%';
+        progressPercentage.textContent = Math.floor(progress) + '%';
+    }, incrementTime);
+});
+
+// ==========================================
 // CURSOR GLOW EFFECT
 // ==========================================
 const cursorGlow = document.querySelector('.cursor-glow');
@@ -9,6 +48,48 @@ document.addEventListener('mousemove', (e) => {
 
     cursorGlow.style.left = x + 'px';
     cursorGlow.style.top = y + 'px';
+});
+
+// ==========================================
+// BUTTON HOVER SOUNDS (Professional & Subtle)
+// ==========================================
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+function playHoverSound() {
+    // Create subtle, professional "click" sound
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    // Soft tone frequency (not harsh)
+    oscillator.frequency.value = 500;
+    oscillator.type = 'sine';
+
+    // Very subtle volume with quick fade
+    gainNode.gain.setValueAtTime(0.08, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.1);
+
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.1);
+}
+
+// Add hover sound to all interactive elements
+const interactiveElements = document.querySelectorAll(`
+    .btn-primary,
+    .btn-secondary,
+    .project-card,
+    .nav-links a:not(.btn-primary),
+    .theme-toggle-btn,
+    .stat-pill,
+    .glow-card
+`);
+
+interactiveElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        playHoverSound();
+    });
 });
 
 // ==========================================

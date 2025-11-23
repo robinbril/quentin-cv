@@ -947,6 +947,27 @@ body.light-theme .stat-pill {
     flex-shrink: 0;
 }
 
+/* WhatsApp CTA - Special Styling */
+.whatsapp-cta {
+    background: rgba(37, 211, 102, 0.1);
+    border-color: rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-cta:hover {
+    background: rgba(37, 211, 102, 0.15);
+    border-color: #25D366;
+    transform: translateX(5px) scale(1.02);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-cta i {
+    color: #25D366;
+}
+
+body.light-theme .whatsapp-cta:hover {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+}
+
 /* ==========================================
    FOOTER
    ========================================== */
@@ -1031,5 +1052,204 @@ footer {
 
     .timeline {
         padding-left: 1.5rem;
+    }
+}
+
+/* ==========================================
+   PRELOADER - BIOS STYLE
+   ========================================== */
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-content {
+    font-family: 'JetBrains Mono', monospace;
+    color: #00ff9d;
+    max-width: 900px;
+    width: 90%;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Noise Overlay */
+.noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeBlend mode='screen'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* BIOS Header */
+.bios-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #00ff9d33;
+}
+
+.mem-info {
+    color: #00ff9d;
+}
+
+/* Boot Output */
+.bios-output {
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.boot-line {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: #00ff9d;
+    opacity: 0;
+    animation: fadeInLine 0.3s ease forwards;
+}
+
+.boot-line:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.boot-line:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.boot-line:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.boot-line:nth-child(4) {
+    animation-delay: 1.1s;
+}
+
+.boot-line:nth-child(5) {
+    animation-delay: 1.4s;
+}
+
+.boot-line:nth-child(6) {
+    animation-delay: 1.7s;
+}
+
+.timestamp {
+    color: #00ff9d;
+    opacity: 0.6;
+}
+
+/* Typing Effect */
+.typing-line {
+    position: relative;
+}
+
+.typing-text::after {
+    content: '_';
+    animation: blink-cursor 1s infinite;
+}
+
+@keyframes blink-cursor {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInLine {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Progress Bar Section */
+.progress-container {
+    margin-top: 4rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.75rem;
+    color: #00ff9d;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.progress-percentage {
+    color: #00ff9d;
+    font-weight: 700;
+}
+
+.progress-bar-wrapper {
+    width: 100%;
+    height: 4px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00ff9d, #00d084);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.6),
+        0 0 40px rgba(0, 255, 157, 0.3);
+    transition: width 0.1s linear;
+    position: relative;
+}
+
+/* Glowing edge effect on progress bar */
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .preloader-content {
+        padding: 1.5rem;
+    }
+
+    .bios-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .boot-line {
+        font-size: 0.7rem;
     }
 }
