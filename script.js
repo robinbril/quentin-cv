@@ -239,6 +239,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 navLinks.style.display = 'none';
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
             }
-        }
-    });
+        });
 });
+
+// ==========================================
+// AI PORTFOLIO FILTER FUNCTIONALITY
+// ==========================================
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.ai-project-card');
+
+if (filterButtons.length > 0 && projectCards.length > 0) {
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            // Update active state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filter cards with animation
+            projectCards.forEach((card, index) => {
+                const categories = card.getAttribute('data-category').split(' ');
+
+                if (filter === 'all' || categories.includes(filter)) {
+                    // Show card with stagger animation
+                    setTimeout(() => {
+                        card.classList.remove('hidden');
+                        card.style.animation = 'fadeInUp 0.4s ease-out';
+                    }, index * 30);
+                } else {
+                    // Hide card
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Play subtle feedback sound
+            playHoverSound();
+        });
+    });
+}
