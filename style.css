@@ -1067,80 +1067,65 @@ body.light-theme .ai-project-card:hover {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* Color Variants for Icons with Enhanced Gradients */
+/* Color Variants for Icons - Professional Look */
 .icon-violet {
     background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
 }
 
 .icon-emerald {
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
 }
 
 .icon-blue {
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
 }
 
 .icon-amber {
     background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-    box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
 }
 
 .icon-rose {
     background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
-    box-shadow: 0 0 30px rgba(244, 63, 94, 0.4);
 }
 
 .icon-indigo {
     background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
 }
 
 .icon-teal {
     background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-    box-shadow: 0 0 30px rgba(20, 184, 166, 0.4);
 }
 
 .icon-pink {
     background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-    box-shadow: 0 0 30px rgba(236, 72, 153, 0.4);
 }
 
 .icon-cyan {
     background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-    box-shadow: 0 0 30px rgba(6, 182, 212, 0.4);
 }
 
 .icon-purple {
     background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
 }
 
 .icon-slate {
     background: linear-gradient(135deg, #64748b 0%, #475569 100%);
-    box-shadow: 0 0 30px rgba(100, 116, 139, 0.3);
 }
 
 .icon-orange {
     background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-    box-shadow: 0 0 30px rgba(249, 115, 22, 0.4);
 }
 
 .icon-red {
     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-    box-shadow: 0 0 30px rgba(239, 68, 68, 0.4);
 }
 
 .icon-lime {
     background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
-    box-shadow: 0 0 30px rgba(132, 204, 22, 0.4);
 }
 
 .icon-green {
     background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-    box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
 }
 
 /* Card Text Content */
@@ -1215,117 +1200,101 @@ body.light-theme .ai-project-card p strong {
     transform: translateY(-2px) scale(1.05);
 }
 
-/* Tag Color Variants with Enhanced Contrast */
+/* Tag Color Variants - Professional Subtle Colors */
 .tag-violet {
-    background: rgba(139, 92, 246, 0.2);
+    background: rgba(139, 92, 246, 0.15);
     color: #a78bfa;
-    border: 1.5px solid rgba(139, 92, 246, 0.4);
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.3);
 }
 
 .tag-emerald {
-    background: rgba(16, 185, 129, 0.2);
+    background: rgba(16, 185, 129, 0.15);
     color: #34d399;
-    border: 1.5px solid rgba(16, 185, 129, 0.4);
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .tag-blue {
-    background: rgba(59, 130, 246, 0.2);
+    background: rgba(59, 130, 246, 0.15);
     color: #60a5fa;
-    border: 1.5px solid rgba(59, 130, 246, 0.4);
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .tag-amber {
-    background: rgba(245, 158, 11, 0.2);
+    background: rgba(245, 158, 11, 0.15);
     color: #fbbf24;
-    border: 1.5px solid rgba(245, 158, 11, 0.4);
-    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .tag-rose {
-    background: rgba(244, 63, 94, 0.2);
+    background: rgba(244, 63, 94, 0.15);
     color: #fb7185;
-    border: 1.5px solid rgba(244, 63, 94, 0.4);
-    box-shadow: 0 0 15px rgba(244, 63, 94, 0.2);
+    border: 1px solid rgba(244, 63, 94, 0.3);
 }
 
 .tag-indigo {
-    background: rgba(99, 102, 241, 0.2);
+    background: rgba(99, 102, 241, 0.15);
     color: #818cf8;
-    border: 1.5px solid rgba(99, 102, 241, 0.4);
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+    border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
 .tag-teal {
-    background: rgba(20, 184, 166, 0.2);
+    background: rgba(20, 184, 166, 0.15);
     color: #2dd4bf;
-    border: 1.5px solid rgba(20, 184, 166, 0.4);
-    box-shadow: 0 0 15px rgba(20, 184, 166, 0.2);
+    border: 1px solid rgba(20, 184, 166, 0.3);
 }
 
 .tag-pink {
-    background: rgba(236, 72, 153, 0.2);
+    background: rgba(236, 72, 153, 0.15);
     color: #f472b6;
-    border: 1.5px solid rgba(236, 72, 153, 0.4);
-    box-shadow: 0 0 15px rgba(236, 72, 153, 0.2);
+    border: 1px solid rgba(236, 72, 153, 0.3);
 }
 
 .tag-cyan {
-    background: rgba(6, 182, 212, 0.2);
+    background: rgba(6, 182, 212, 0.15);
     color: #22d3ee;
-    border: 1.5px solid rgba(6, 182, 212, 0.4);
-    box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+    border: 1px solid rgba(6, 182, 212, 0.3);
 }
 
 .tag-purple {
-    background: rgba(168, 85, 247, 0.2);
+    background: rgba(168, 85, 247, 0.15);
     color: #c084fc;
-    border: 1.5px solid rgba(168, 85, 247, 0.4);
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+    border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .tag-slate {
-    background: rgba(100, 116, 139, 0.2);
+    background: rgba(100, 116, 139, 0.15);
     color: #94a3b8;
-    border: 1.5px solid rgba(100, 116, 139, 0.4);
-    box-shadow: 0 0 15px rgba(100, 116, 139, 0.2);
+    border: 1px solid rgba(100, 116, 139, 0.3);
 }
 
 .tag-orange {
-    background: rgba(249, 115, 22, 0.2);
+    background: rgba(249, 115, 22, 0.15);
     color: #fb923c;
-    border: 1.5px solid rgba(249, 115, 22, 0.4);
-    box-shadow: 0 0 15px rgba(249, 115, 22, 0.2);
+    border: 1px solid rgba(249, 115, 22, 0.3);
 }
 
 .tag-red {
-    background: rgba(239, 68, 68, 0.2);
+    background: rgba(239, 68, 68, 0.15);
     color: #f87171;
-    border: 1.5px solid rgba(239, 68, 68, 0.4);
-    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 .tag-lime {
-    background: rgba(132, 204, 22, 0.2);
+    background: rgba(132, 204, 22, 0.15);
     color: #a3e635;
-    border: 1.5px solid rgba(132, 204, 22, 0.4);
-    box-shadow: 0 0 15px rgba(132, 204, 22, 0.2);
+    border: 1px solid rgba(132, 204, 22, 0.3);
 }
 
 .tag-green {
-    background: rgba(34, 197, 94, 0.2);
+    background: rgba(34, 197, 94, 0.15);
     color: #4ade80;
-    border: 1.5px solid rgba(34, 197, 94, 0.4);
-    box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 .tag-yellow {
-    background: rgba(234, 179, 8, 0.2);
+    background: rgba(234, 179, 8, 0.15);
     color: #facc15;
-    border: 1.5px solid rgba(234, 179, 8, 0.4);
-    box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+    border: 1px solid rgba(234, 179, 8, 0.3);
 }
 
 .tag-crimson {
@@ -1335,7 +1304,9 @@ body.light-theme .ai-project-card p strong {
 }
 
 .tag-magenta {
-    border: 1px solid rgba(192, 38, 211, 0.3);
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+    border: 1px solid rgba(236, 72, 153, 0.3);
 }
 
 .tag-gray {
