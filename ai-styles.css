@@ -471,3 +471,299 @@ body.light-theme .form-group textarea:focus {
         filter: blur(40px);
     }
 }
+
+/* ==========================================
+   CALENDAR CTA SECTION
+   ========================================== */
+.calendar-cta-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 255, 157, 0.05), rgba(112, 0, 255, 0.05));
+    position: relative;
+    overflow: hidden;
+}
+
+body.light-theme .calendar-cta-section {
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.03), rgba(185, 28, 28, 0.03));
+}
+
+.calendar-cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* CTA Content */
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 255, 157, 0.1);
+    border: 1px solid var(--accent-primary);
+    border-radius: 2rem;
+    width: fit-content;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+body.light-theme .cta-badge {
+    background: rgba(220, 38, 38, 0.1);
+    border-color: var(--accent-primary);
+}
+
+.cta-badge i {
+    width: 16px;
+    height: 16px;
+}
+
+.cta-content h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 0;
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-content>p {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* CTA Features */
+.cta-features {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.feature-item i {
+    width: 18px;
+    height: 18px;
+    color: var(--accent-primary);
+}
+
+/* Calendar Button */
+.calendar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 1.25rem 2.5rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: var(--btn-primary-text);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.calendar-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.calendar-btn:hover::before {
+    opacity: 1;
+}
+
+.calendar-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0, 255, 157, 0.3);
+}
+
+body.light-theme .calendar-btn:hover {
+    box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3);
+}
+
+.calendar-btn i {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease;
+}
+
+.calendar-btn:hover i:last-child {
+    transform: translateX(5px);
+}
+
+.cta-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.cta-note i {
+    width: 16px;
+    height: 16px;
+    color: var(--accent-primary);
+}
+
+/* CTA Visual */
+.cta-visual {
+    position: relative;
+}
+
+.visual-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header i {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-primary);
+}
+
+.card-header span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Time Slots */
+.time-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.time-slot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0, 255, 157, 0.03);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 157, 0.1);
+    transition: all 0.3s ease;
+}
+
+body.light-theme .time-slot {
+    background: rgba(220, 38, 38, 0.03);
+    border-color: rgba(220, 38, 38, 0.1);
+}
+
+.time-slot:hover {
+    background: rgba(0, 255, 157, 0.08);
+    border-color: var(--accent-primary);
+    transform: translateX(5px);
+}
+
+body.light-theme .time-slot:hover {
+    background: rgba(220, 38, 38, 0.08);
+}
+
+.time-slot .day {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.time-slot .times {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .calendar-cta-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .cta-content h2 {
+        font-size: 2.25rem;
+    }
+
+    .cta-features {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .visual-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-cta-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .calendar-btn {
+        width: 100%;
+        padding: 1.15rem 2rem;
+    }
+
+    .time-slot {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
