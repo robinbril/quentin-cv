@@ -1152,13 +1152,14 @@ body.light-theme .ai-project-card:hover {
 }
 
 .ai-project-card p strong {
-    color: var(--accent-primary);
+    color: #5eead4;
     font-weight: 600;
-    text-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
+    text-shadow: 0 0 8px rgba(94, 234, 212, 0.15);
 }
 
 body.light-theme .ai-project-card p strong {
-    text-shadow: 0 0 20px rgba(220, 38, 38, 0.2);
+    color: #dc2626;
+    text-shadow: 0 0 8px rgba(220, 38, 38, 0.1);
 }
 
 /* Project Tags with Semantic Colors */
