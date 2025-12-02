@@ -540,5 +540,6 @@ function initNeuralNetwork() {
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
     initContactModal();
-    initNeuralNetwork();
+    // Neural network replaced with CSS mesh gradient
+    // initNeuralNetwork();
 });
