@@ -943,7 +943,7 @@ body.light-theme .ai-project-card {
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-/* Liquid glass gradient overlay */
+/* Liquid glass gradient overlay - Pure iOS (colorless) */
 .ai-project-card::before {
     content: '';
     position: absolute;
@@ -952,8 +952,8 @@ body.light-theme .ai-project-card {
     width: 200%;
     height: 200%;
     background: radial-gradient(circle at center,
-            rgba(94, 234, 212, 0.08) 0%,
-            rgba(59, 130, 246, 0.05) 25%,
+            rgba(255, 255, 255, 0.04) 0%,
+            rgba(255, 255, 255, 0.02) 25%,
             transparent 50%);
     opacity: 0;
     transition: opacity 0.8s ease;
@@ -963,8 +963,8 @@ body.light-theme .ai-project-card {
 
 body.light-theme .ai-project-card::before {
     background: radial-gradient(circle at center,
-            rgba(59, 130, 246, 0.06) 0%,
-            rgba(147, 51, 234, 0.04) 25%,
+            rgba(0, 0, 0, 0.02) 0%,
+            rgba(0, 0, 0, 0.01) 25%,
             transparent 50%);
 }
 
@@ -1090,65 +1090,51 @@ body.light-theme .ai-project-card:hover {
     z-index: 1;
 }
 
-/* Color Variants for Icons - Professional Look */
-.icon-violet {
-    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
-}
-
-.icon-emerald {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-}
-
-.icon-blue {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-}
-
-.icon-amber {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-}
-
-.icon-rose {
-    background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
-}
-
-.icon-indigo {
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-}
-
-.icon-teal {
-    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-}
-
-.icon-pink {
-    background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-}
-
-.icon-cyan {
-    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-}
-
-.icon-purple {
-    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
-}
-
-.icon-slate {
-    background: linear-gradient(135deg, #64748b 0%, #475569 100%);
-}
-
-.icon-orange {
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-}
-
-.icon-red {
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-}
-
-.icon-lime {
-    background: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
-}
-
+/* Icon Wrappers - Pure iOS Liquid Glass (No Color) */
+.project-icon-wrapper,
+.icon-violet,
+.icon-emerald,
+.icon-blue,
+.icon-amber,
+.icon-rose,
+.icon-indigo,
+.icon-teal,
+.icon-pink,
+.icon-cyan,
+.icon-purple,
+.icon-slate,
+.icon-orange,
+.icon-red,
+.icon-lime,
 .icon-green {
-    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.12) 0%,
+            rgba(255, 255, 255, 0.06) 100%);
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+body.light-theme .project-icon-wrapper,
+body.light-theme .icon-violet,
+body.light-theme .icon-emerald,
+body.light-theme .icon-blue,
+body.light-theme .icon-amber,
+body.light-theme .icon-rose,
+body.light-theme .icon-indigo,
+body.light-theme .icon-teal,
+body.light-theme .icon-pink,
+body.light-theme .icon-cyan,
+body.light-theme .icon-purple,
+body.light-theme .icon-slate,
+body.light-theme .icon-orange,
+body.light-theme .icon-red,
+body.light-theme .icon-lime,
+body.light-theme .icon-green {
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.6) 0%,
+            rgba(255, 255, 255, 0.4) 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Card Text Content */
@@ -1223,111 +1209,51 @@ body.light-theme .ai-project-card p strong {
     transform: translateY(-2px) scale(1.05);
 }
 
-/* Tag Color Variants - Ultra Subtle */
-.tag-violet {
-    background: rgba(139, 92, 246, 0.08);
-    color: rgba(167, 139, 250, 0.8);
-    border: 1px solid rgba(139, 92, 246, 0.15);
-}
-
-.tag-emerald {
-    background: rgba(16, 185, 129, 0.08);
-    color: rgba(52, 211, 153, 0.8);
-    border: 1px solid rgba(16, 185, 129, 0.15);
-}
-
-.tag-blue {
-    background: rgba(59, 130, 246, 0.08);
-    color: rgba(96, 165, 250, 0.8);
-    border: 1px solid rgba(59, 130, 246, 0.15);
-}
-
-.tag-amber {
-    background: rgba(245, 158, 11, 0.08);
-    color: rgba(251, 191, 36, 0.8);
-    border: 1px solid rgba(245, 158, 11, 0.15);
-}
-
-.tag-rose {
-    background: rgba(244, 63, 94, 0.08);
-    color: rgba(251, 113, 133, 0.8);
-    border: 1px solid rgba(244, 63, 94, 0.15);
-}
-
-.tag-indigo {
-    background: rgba(99, 102, 241, 0.08);
-    color: rgba(129, 140, 248, 0.8);
-    border: 1px solid rgba(99, 102, 241, 0.15);
-}
-
-.tag-teal {
-    background: rgba(20, 184, 166, 0.08);
-    color: rgba(45, 212, 191, 0.8);
-    border: 1px solid rgba(20, 184, 166, 0.15);
-}
-
-.tag-pink {
-    background: rgba(236, 72, 153, 0.08);
-    color: rgba(244, 114, 182, 0.8);
-    border: 1px solid rgba(236, 72, 153, 0.15);
-}
-
-.tag-cyan {
-    background: rgba(6, 182, 212, 0.08);
-    color: rgba(34, 211, 238, 0.8);
-    border: 1px solid rgba(6, 182, 212, 0.15);
-}
-
-.tag-purple {
-    background: rgba(168, 85, 247, 0.08);
-    color: rgba(192, 132, 252, 0.8);
-    border: 1px solid rgba(168, 85, 247, 0.15);
-}
-
-.tag-slate {
-    background: rgba(100, 116, 139, 0.08);
-    color: rgba(148, 163, 184, 0.8);
-    border: 1px solid rgba(100, 116, 139, 0.15);
-}
-
-.tag-orange {
-    background: rgba(249, 115, 22, 0.08);
-    color: rgba(251, 146, 60, 0.8);
-    border: 1px solid rgba(249, 115, 22, 0.15);
-}
-
-.tag-red {
-    background: rgba(239, 68, 68, 0.08);
-    color: rgba(248, 113, 113, 0.8);
-    border: 1px solid rgba(239, 68, 68, 0.15);
-}
-
-.tag-lime {
-    background: rgba(132, 204, 22, 0.08);
-    color: rgba(163, 230, 53, 0.8);
-    border: 1px solid rgba(132, 204, 22, 0.15);
-}
-
-.tag-green {
-    background: rgba(34, 197, 94, 0.08);
-    color: rgba(74, 222, 128, 0.8);
-    border: 1px solid rgba(34, 197, 94, 0.15);
-}
-
-.tag-yellow {
-    background: rgba(234, 179, 8, 0.08);
-    color: rgba(250, 204, 21, 0.8);
-    border: 1px solid rgba(234, 179, 8, 0.15);
-}
-
-.tag-crimson {
-    background: rgba(220, 38, 38, 0.15);
-    color: #dc2626;
-    border: 1px solid rgba(220, 38, 38, 0.3);
-}
-
+/* Tag Color Variants - iOS Pure Glass (Minimal Color) */
+.tag-violet,
+.tag-emerald,
+.tag-blue,
+.tag-amber,
+.tag-rose,
+.tag-indigo,
+.tag-teal,
+.tag-pink,
+.tag-cyan,
+.tag-purple,
+.tag-slate,
+.tag-orange,
+.tag-red,
+.tag-lime,
+.tag-green,
+.tag-yellow,
 .tag-magenta {
-    border: 1px solid rgba(236, 72, 153, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+body.light-theme .tag-violet,
+body.light-theme .tag-emerald,
+body.light-theme .tag-blue,
+body.light-theme .tag-amber,
+body.light-theme .tag-rose,
+body.light-theme .tag-indigo,
+body.light-theme .tag-teal,
+body.light-theme .tag-pink,
+body.light-theme .tag-cyan,
+body.light-theme .tag-purple,
+body.light-theme .tag-slate,
+body.light-theme .tag-orange,
+body.light-theme .tag-red,
+body.light-theme .tag-lime,
+body.light-theme .tag-green,
+body.light-theme .tag-yellow,
+body.light-theme .tag-magenta {
+    background: rgba(0, 0, 0, 0.03);
+    color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .tag-gray {
