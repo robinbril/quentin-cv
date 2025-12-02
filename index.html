@@ -19,6 +19,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ai-styles.css">
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -87,6 +88,9 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
+            <!-- AI Neural Network Background -->
+            <canvas id="neural-network" class="neural-bg"></canvas>
+
             <div class="hero-content">
                 <h1>Robin <span class="accent-text">Bril</span></h1>
                 <p class="hero-subtitle">
@@ -754,6 +758,85 @@
     <footer>
         <p>&copy; 2025 Robin Bril. All rights reserved.</p>
     </footer>
+
+    <!-- AI Contact Form Modal -->
+    <div id="contact-modal" class="contact-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+
+            <div class="modal-header">
+                <div class="ai-badge">
+                    <span class="ai-pulse"></span>
+                    <span>AI-Powered Response</span>
+                </div>
+                <h2>Laat je nummer achter</h2>
+                <p>Robin neemt binnen 24 uur contact op via WhatsApp of telefoon</p>
+            </div>
+
+            <form id="ai-contact-form" class="ai-form">
+                <div class="form-group">
+                    <label for="contact-name">
+                        <i data-lucide="user"></i>
+                        Naam
+                    </label>
+                    <input type="text" id="contact-name" name="name" placeholder="Jouw naam" required
+                        autocomplete="name">
+                    <span class="input-glow"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-phone">
+                        <i data-lucide="phone"></i>
+                        Telefoonnummer
+                    </label>
+                    <input type="tel" id="contact-phone" name="phone" placeholder="+31 6 1234 5678" required
+                        autocomplete="tel">
+                    <span class="input-glow"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-message">
+                        <i data-lucide="message-square"></i>
+                        Bericht (optioneel)
+                    </label>
+                    <textarea id="contact-message" name="message" placeholder="Waar kan Robin je mee helpen?"
+                        rows="4"></textarea>
+                    <span class="input-glow"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Verstuur Aanvraag</span>
+                        <span class="btn-loader"></span>
+                        <i data-lucide="send"></i>
+                    </button>
+                </div>
+
+                <div class="form-footer">
+                    <i data-lucide="shield-check"></i>
+                    <span>Jouw gegevens worden veilig verwerkt en niet gedeeld</span>
+                </div>
+            </form>
+
+            <div class="form-success hidden">
+                <div class="success-icon">
+                    <i data-lucide="check-circle"></i>
+                </div>
+                <h3>Bedankt voor je aanvraag!</h3>
+                <p>Robin neemt zo snel mogelijk contact met je op.</p>
+            </div>
+
+            <!-- AI Background Animation -->
+            <div class="modal-bg-animation">
+                <div class="ai-orb ai-orb-1"></div>
+                <div class="ai-orb ai-orb-2"></div>
+                <div class="ai-orb ai-orb-3"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- WhatsApp Widget -->
     <div class="whatsapp-widget">

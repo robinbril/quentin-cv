@@ -299,3 +299,246 @@ if (filterButtons.length > 0 && projectCards.length > 0) {
         });
     });
 }
+
+// ==========================================
+// AI CONTACT MODAL
+// ==========================================
+function initContactModal() {
+    const modal = document.getElementById('contact-modal');
+    const closeBtn = modal?.querySelector('.modal-close');
+    const form = document.getElementById('ai-contact-form');
+    const formContainer = modal?.querySelector('.ai-form');
+    const successMessage = modal?.querySelector('.form-success');
+    const whatsappWidget = document.querySelector('.whatsapp-widget');
+
+    if (!modal) return;
+
+    // Open modal function
+    window.openContactModal = function () {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Reinitialize lucide icons for modal
+        setTimeout(() => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }, 100);
+    };
+
+    // Close modal function
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+
+        // Reset form after closing
+        setTimeout(() => {
+            if (formContainer) formContainer.classList.remove('hidden');
+            if (successMessage) successMessage.classList.add('hidden');
+            if (form) form.reset();
+        }, 300);
+    }
+
+    // Close on button click
+    closeBtn?.addEventListener('click', closeModal);
+
+    // Close on overlay click
+    modal.querySelector('.modal-overlay')?.addEventListener('click', closeModal);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // Add click to WhatsApp widget to open modal
+    if (whatsappWidget) {
+        const whatsappBtn = whatsappWidget.querySelector('.whatsapp-btn');
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openContactModal();
+            });
+        }
+    }
+
+    // Form submission
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector('.submit-btn');
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                message: formData.get('message') || 'Geen bericht opgegeven'
+            };
+
+            // Add loading state
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+
+            // Simulate API call (replace with actual endpoint)
+            try {
+                // Mock delay
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Log to console (in production, send to server)
+                console.log('Form submitted:', data);
+
+                // Show success message
+                if (formContainer) {
+                    formContainer.style.display = 'none';
+                }
+                if (successMessage) {
+                    successMessage.classList.remove('hidden');
+                }
+
+                // Reinitialize icons
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+
+                // Auto close after 3 seconds
+                setTimeout(() => {
+                    closeModal();
+                }, 3000);
+
+            } catch (error) {
+                console.error('Submission error:', error);
+                alert('Er ging iets mis. Probeer het opnieuw of app Robin direct.');
+            } finally {
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }
+        });
+    }
+}
+
+// ==========================================
+// NEURAL NETWORK BACKGROUND ANIMATION
+// ==========================================
+function initNeuralNetwork() {
+    const canvas = document.getElementById('neural-network');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationFrame;
+
+    // Set canvas size
+    function resizeCanvas() {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            canvas.width = hero.offsetWidth;
+            canvas.height = hero.offsetHeight;
+        }
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+        initParticles();
+    });
+
+    // Particle class
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 1;
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            // Bounce off edges
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+
+        draw() {
+            const isDarkTheme = !document.body.classList.contains('light-theme');
+            const particleColor = isDarkTheme
+                ? 'rgba(0, 255, 157, 0.6)'
+                : 'rgba(220, 38, 38, 0.4)';
+
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = particleColor;
+            ctx.fill();
+        }
+    }
+
+    // Initialize particles
+    function initParticles() {
+        particles = [];
+        const particleCount = Math.min(Math.floor(canvas.width / 15), 100);
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    // Draw connections
+    function drawConnections() {
+        const isDarkTheme = !document.body.classList.contains('light-theme');
+        const maxDistance = 150;
+
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < maxDistance) {
+                    const opacity = (1 - distance / maxDistance) * 0.3;
+                    const lineColor = isDarkTheme
+                        ? `rgba(0, 255, 157, ${opacity})`
+                        : `rgba(220, 38, 38, ${opacity})`;
+
+                    ctx.beginPath();
+                    ctx.strokeStyle = lineColor;
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    // Animation loop
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach(particle => {
+            particle.update();
+            particle.draw();
+        });
+
+        drawConnections();
+
+        animationFrame = requestAnimationFrame(animate);
+    }
+
+    // Start animation
+    initParticles();
+    animate();
+
+    // Stop animation on page unload
+    window.addEventListener('beforeunload', () => {
+        if (animationFrame) {
+            cancelAnimationFrame(animationFrame);
+        }
+    });
+}
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    initContactModal();
+    initNeuralNetwork();
+});
