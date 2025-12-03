@@ -42,6 +42,11 @@ body.light-theme {
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
 .cursor-glow {
     position: fixed;
     width: 500px;
