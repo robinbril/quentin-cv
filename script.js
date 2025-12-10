@@ -12,7 +12,7 @@ function startPreloader() {
     if (preloader.classList.contains('fade-out')) return;
 
     let progress = 0;
-    const duration = 2000; // 2 seconds total
+    const duration = 1600; // 1.6 seconds total (20% faster)
     const intervalTime = 20; // Update every 20ms
     const steps = duration / intervalTime;
     const increment = 100 / steps;
