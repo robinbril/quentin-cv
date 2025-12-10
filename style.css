@@ -149,18 +149,16 @@ em {
 
 .section-header {
     margin-bottom: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    text-align: center;
+}
+
+.section-header h2 {
+    display: inline-block;
+    margin: 0;
 }
 
 .section-header .line {
-    height: 1px;
-    background: var(--border-color);
-    flex-grow: 1;
-    max-width: 120px;
-    opacity: 0.3;
+    display: none;
 }
 
 /* ==========================================
