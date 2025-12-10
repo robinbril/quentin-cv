@@ -42,8 +42,20 @@ body.light-theme {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
 img {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
