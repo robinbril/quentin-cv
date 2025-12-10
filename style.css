@@ -909,13 +909,14 @@ body.light-theme .tags span:hover {
 
 /* Featured Project */
 .featured-project {
-    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(124, 58, 237, 0.02) 100%);
-    border: 2px solid var(--accent-primary);
-    border-radius: 24px;
-    padding: 3rem;
-    margin-bottom: 4rem;
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(124, 58, 237, 0.03) 100%);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .featured-badge {
@@ -937,10 +938,20 @@ body.light-theme .tags span:hover {
 }
 
 .featured-content h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-weight: 700;
+}
+
+.featured-content p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .featured-content p {
