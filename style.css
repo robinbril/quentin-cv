@@ -2211,11 +2211,20 @@ footer {
 /* ==========================================
    CONTACT SECTION
    ========================================== */
-.contact-subtitle {
+.contact-header {
+    justify-content: center;
+}
+
+.contact-header h2 {
+    text-align: center;
+}
+
+.contact-value-prop {
     text-align: center;
     font-size: 1.125rem;
     color: var(--text-secondary);
     margin-bottom: 3rem;
+    font-weight: 500;
 }
 
 /* Primary CTA */
