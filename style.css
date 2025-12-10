@@ -353,8 +353,8 @@ body.light-theme .btn-primary:hover {
     right: 0;
     bottom: 0;
     background: url('hero-bg.png') center/cover no-repeat;
-    opacity: 0.4;
-    animation: heroFloat 20s ease-in-out infinite;
+    opacity: 0.15;
+    animation: heroFloat 25s ease-in-out infinite;
     z-index: -2;
 }
 
@@ -367,26 +367,26 @@ body.light-theme .btn-primary:hover {
     right: 0;
     bottom: 0;
     background: linear-gradient(180deg,
-            rgba(248, 250, 252, 0.85) 0%,
-            rgba(248, 250, 252, 0.95) 100%);
+            rgba(248, 250, 252, 0.95) 0%,
+            rgba(248, 250, 252, 1) 100%);
     z-index: -1;
 }
 
 body.dark-theme .hero::after {
     background: linear-gradient(180deg,
-            rgba(10, 10, 10, 0.85) 0%,
-            rgba(10, 10, 10, 0.95) 100%);
+            rgba(10, 10, 10, 0.92) 0%,
+            rgba(10, 10, 10, 1) 100%);
 }
 
 @keyframes heroFloat {
 
     0%,
     100% {
-        transform: scale(1.05) translateY(0);
+        transform: scale(1.02) translateY(0);
     }
 
     50% {
-        transform: scale(1.1) translateY(-15px);
+        transform: scale(1.06) translateY(-10px);
     }
 }
 
