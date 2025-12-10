@@ -2879,9 +2879,9 @@ ul.role-description li::before {
     display: flex;
 }
 
-/* Mobile: show only first 3 cards */
+/* Mobile: show only first 5 cards */
 @media (max-width: 768px) {
-    .ai-projects-grid:not(.expanded) .ai-project-card:nth-child(n+4) {
+    .ai-projects-grid:not(.expanded) .ai-project-card:nth-child(n+6) {
         display: none;
     }
 }

@@ -357,16 +357,7 @@ function initContactModal() {
         }
     });
 
-    // Add click to WhatsApp widget to open modal
-    if (whatsappWidget) {
-        const whatsappBtn = whatsappWidget.querySelector('.whatsapp-btn');
-        if (whatsappBtn) {
-            whatsappBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                openContactModal();
-            });
-        }
-    }
+    // WhatsApp button now goes directly to WhatsApp (no modal override)
 
     // Form submission
     if (form) {
