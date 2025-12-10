@@ -142,16 +142,11 @@ em {
 
 /* Section Styling */
 .section {
-    padding: 6rem 2rem;
-    text-align: center;
+    padding: 6rem 0;
 }
 
 .section-header {
-    margin-bottom: 3rem;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    margin-bottom: 4rem;
 }
 
 .section-header .line {
