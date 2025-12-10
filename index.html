@@ -28,38 +28,58 @@
 
 <body>
     <!-- Preloader -->
-    <div id="preloader" class="preloader">
+    <div class="preloader" id="preloader">
         <div class="preloader-content">
-            <div class="bios-header">
-                <span>ROBIN_OS v2.0</span>
-                <span class="mem-info">MEM: 64384K OK</span>
+            <div class="code-header">
+                <div class="header-left">
+                    <span class="file-name">portfolio.init</span>
+                </div>
+                <div class="header-right">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Loading</span>
+                </div>
             </div>
 
-            <div class="bios-output">
-                <div class="boot-line">[<span class="timestamp">12:34:39</span>] BIOS DATE 11/19/25 14:22:54 VER 1.0.4
+            <div class="code-editor">
+                <div class="code-line">
+                    <span class="line-number">1</span>
+                    <span class="keyword">import</span> <span class="variable">{ Portfolio }</span> <span
+                        class="keyword">from</span> <span class="string">'@robin/core'</span>
                 </div>
-                <div class="boot-line">[<span class="timestamp">12:34:39</span>] RAM: 64GB SYSTEM MEMORY OK</div>
-                <div class="boot-line">[<span class="timestamp">12:34:39</span>] INITIALIZING KERNEL...</div>
-                <div class="boot-line">[<span class="timestamp">12:34:39</span>] LOADING MODULES: [REACT] [TAILWIND]
-                    [MOTION]</div>
-                <div class="boot-line">[<span class="timestamp">12:34:39</span>] ESTABLISHING SECURE CONNECTION...</div>
-                <div class="boot-line typing-line">[<span class="timestamp">12:34:39</span>] <span class="typing-text">_
-                        OPTIMIZING NEURAL PATHWAYS...</span></div>
+                <div class="code-line">
+                    <span class="line-number">2</span>
+                    <span class="keyword">import</span> <span class="variable">{ AIProjects, Experience }</span> <span
+                        class="keyword">from</span> <span class="string">'@robin/components'</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-number">3</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-number">4</span>
+                    <span class="comment">// Initialize portfolio instance</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-number">5</span>
+                    <span class="keyword">const</span> <span class="variable">app</span> <span class="operator">=</span>
+                    <span class="keyword">new</span> <span class="class">Portfolio</span><span class="bracket">()</span>
+                </div>
+                <div class="code-line">
+                    <span class="line-number">6</span>
+                    <span class="variable">app</span><span class="operator">.</span><span
+                        class="method">render</span><span class="bracket">()</span>
+                </div>
             </div>
 
             <div class="progress-container">
-                <div class="progress-label">
-                    <span>SYSTEM LOAD</span>
-                    <span class="progress-percentage">0%</span>
-                </div>
                 <div class="progress-bar-wrapper">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
+                <div class="progress-info">
+                    <span class="progress-text">Initializing...</span>
+                    <span class="progress-percentage" id="progress-percentage">0%</span>
+                </div>
             </div>
         </div>
-
-        <!-- Noise background overlay -->
-        <div class="noise-overlay"></div>
     </div>
 
     <div class="cursor-glow"></div>
