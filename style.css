@@ -51,7 +51,7 @@ img {
     position: fixed;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(0, 255, 157, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -227,7 +227,7 @@ em {
 
 .nav-links .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0, 255, 157, 0.3);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
 }
 
 body.light-theme .nav-links .btn-primary:hover {
@@ -301,7 +301,7 @@ body.light-theme .theme-toggle-btn .light-icon {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0, 255, 157, 0.3);
+    box-shadow: 0 6px 25px rgba(124, 58, 237, 0.3);
 }
 
 body.light-theme .btn-primary:hover {
@@ -324,7 +324,7 @@ body.light-theme .btn-primary:hover {
 
 .btn-secondary:hover {
     border-color: var(--accent-primary);
-    background: rgba(0, 255, 157, 0.05);
+    background: rgba(124, 58, 237, 0.05);
     transform: translateY(-2px);
 }
 
@@ -426,7 +426,7 @@ body.dark-theme .hero::after {
     align-items: center;
     gap: 0.6rem;
     padding: 0.7rem 1.5rem;
-    background: rgba(0, 255, 157, 0.08);
+    background: rgba(124, 58, 237, 0.08);
     border: 1.5px solid var(--accent-primary);
     border-radius: 50px;
     font-size: 0.9rem;
@@ -438,8 +438,8 @@ body.dark-theme .hero::after {
 }
 
 .badge:hover {
-    background: rgba(0, 255, 157, 0.12);
-    box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+    background: rgba(124, 58, 237, 0.12);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
 }
 
 .status-dot {
@@ -527,7 +527,7 @@ body.dark-theme .hero::after {
 
 .stat-pill:hover {
     border-color: var(--accent-primary);
-    background: rgba(0, 255, 157, 0.05);
+    background: rgba(124, 58, 237, 0.05);
     transform: translateY(-2px);
 }
 
@@ -575,8 +575,8 @@ body.light-theme .stat-pill {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: rgba(0, 255, 157, 0.08);
-    border: 1px solid rgba(0, 255, 157, 0.2);
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.2);
     border-radius: 6px;
     font-size: 0.85rem;
     font-family: 'JetBrains Mono', monospace;
@@ -585,7 +585,7 @@ body.light-theme .stat-pill {
 }
 
 .tech-badge:hover {
-    background: rgba(0, 255, 157, 0.12);
+    background: rgba(124, 58, 237, 0.12);
     border-color: var(--accent-primary);
     transform: translateY(-2px);
 }
@@ -830,7 +830,7 @@ body.light-theme .tech-badge:hover {
 .project-icon {
     width: 56px;
     height: 56px;
-    background: rgba(0, 255, 157, 0.1);
+    background: rgba(124, 58, 237, 0.1);
     border: 1px solid var(--accent-primary);
     border-radius: 10px;
     display: flex;
@@ -863,8 +863,8 @@ body.light-theme .tech-badge:hover {
 .tags span {
     font-size: 0.75rem;
     padding: 0.35rem 0.85rem;
-    background: rgba(0, 255, 157, 0.1);
-    border: 1px solid rgba(0, 255, 157, 0.3);
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.3);
     border-radius: 50px;
     color: var(--accent-primary);
     font-family: 'JetBrains Mono', monospace;
@@ -872,7 +872,7 @@ body.light-theme .tech-badge:hover {
 }
 
 .tags span:hover {
-    background: rgba(0, 255, 157, 0.2);
+    background: rgba(124, 58, 237, 0.2);
     border-color: var(--accent-primary);
 }
 
@@ -1039,7 +1039,7 @@ body.light-theme .tags span:hover {
 .filter-btn:hover {
     border-color: var(--accent-primary);
     color: var(--accent-primary);
-    background: rgba(0, 255, 157, 0.05);
+    background: rgba(124, 58, 237, 0.05);
 }
 
 .filter-btn.active {
@@ -1487,7 +1487,7 @@ body.light-theme .tag-magenta {
 
 .skill-tags span {
     padding: 0.6rem 1.1rem;
-    background: rgba(0, 255, 157, 0.05);
+    background: rgba(124, 58, 237, 0.05);
     border: 1px solid var(--border-color);
     border-radius: 6px;
     font-size: 0.9rem;
@@ -1497,7 +1497,7 @@ body.light-theme .tag-magenta {
 
 .skill-tags span:hover {
     border-color: var(--accent-primary);
-    background: rgba(0, 255, 157, 0.1);
+    background: rgba(124, 58, 237, 0.1);
     transform: translateY(-2px);
 }
 
@@ -1576,7 +1576,7 @@ body.light-theme .tag-magenta {
     align-items: center;
     gap: 1rem;
     padding: 1.2rem 2rem;
-    background: rgba(0, 255, 157, 0.05);
+    background: rgba(124, 58, 237, 0.05);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     width: 100%;
@@ -1586,7 +1586,7 @@ body.light-theme .tag-magenta {
 }
 
 .contact-item:hover {
-    background: rgba(0, 255, 157, 0.1);
+    background: rgba(124, 58, 237, 0.1);
     border-color: var(--accent-primary);
     transform: translateX(5px);
 }
@@ -1659,7 +1659,7 @@ body.light-theme .whatsapp-cta:hover {
 .email-reveal {
     margin-top: 2rem;
     padding: 1.5rem;
-    background: rgba(0, 255, 157, 0.05);
+    background: rgba(124, 58, 237, 0.05);
     border: 1px solid var(--accent-primary);
     border-radius: 8px;
     text-align: center;
