@@ -2175,6 +2175,14 @@ footer {
     gap: 1rem;
 }
 
+.author-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-primary);
+}
+
 .author-info {
     display: flex;
     flex-direction: column;
