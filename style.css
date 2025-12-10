@@ -2809,8 +2809,8 @@ ul.role-description li::before {
     transform: rotate(180deg);
 }
 
-/* Desktop: show first 9 cards */
-.ai-projects-grid:not(.expanded) .ai-project-card:nth-child(n+10) {
+/* Desktop: show first 6 cards */
+.ai-projects-grid:not(.expanded) .ai-project-card:nth-child(n+7) {
     display: none;
 }
 
