@@ -4,7 +4,7 @@
 function startPreloader() {
     const preloader = document.getElementById('preloader');
     const progressBar = document.getElementById('progress-bar');
-    const progressPercentage = document.querySelector('.progress-percentage');
+    const progressPercentage = document.getElementById('progress-percentage');
 
     if (!preloader) return;
 
