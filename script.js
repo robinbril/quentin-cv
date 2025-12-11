@@ -12,11 +12,10 @@ function startPreloader() {
     if (preloader.classList.contains('fade-out')) return;
 
     let progress = 0;
-    const duration = 1600; // 1.6 seconds to reach 99%
+    const duration = 1360; // 1.36 seconds (15% faster)
     const intervalTime = 20;
     const steps = duration / intervalTime;
-    const increment = 99 / steps; // Only go to 99%
-    let pausedAt99 = false;
+    const increment = 100 / steps;
 
     const removePreloader = () => {
         preloader.classList.add('fade-out');
@@ -28,25 +27,15 @@ function startPreloader() {
     const interval = setInterval(() => {
         progress += increment;
 
-        if (progress >= 99 && !pausedAt99) {
-            progress = 99;
-            pausedAt99 = true;
+        if (progress >= 100) {
+            progress = 100;
             clearInterval(interval);
 
-            if (progressBar) progressBar.style.width = '99%';
-            if (progressPercentage) progressPercentage.textContent = '99%';
+            if (progressBar) progressBar.style.width = '100%';
+            if (progressPercentage) progressPercentage.textContent = '100%';
 
-            // Pause at 99% for 3 seconds, then show easter egg
-            setTimeout(() => {
-                if (progressPercentage) progressPercentage.textContent = 'just kidding...';
-
-                setTimeout(() => {
-                    if (progressBar) progressBar.style.width = '100%';
-                    if (progressPercentage) progressPercentage.textContent = '100%';
-                    setTimeout(removePreloader, 300);
-                }, 800);
-            }, 3000);
-        } else if (!pausedAt99) {
+            setTimeout(removePreloader, 200);
+        } else {
             if (progressBar) progressBar.style.width = `${progress}%`;
             if (progressPercentage) progressPercentage.textContent = `${Math.floor(progress)}%`;
         }
