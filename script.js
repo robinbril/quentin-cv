@@ -270,6 +270,9 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.ai-project-card');
 
 if (filterButtons.length > 0 && projectCards.length > 0) {
+    const projectsGrid = document.querySelector('.ai-projects-grid');
+    const showMoreBtn = document.getElementById('showMoreProjects');
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const filter = button.getAttribute('data-filter');
@@ -278,14 +281,31 @@ if (filterButtons.length > 0 && projectCards.length > 0) {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
+            // When filter is not 'all', expand grid to show all matching cards
+            if (filter !== 'all') {
+                if (projectsGrid) projectsGrid.classList.add('expanded');
+                if (showMoreBtn) showMoreBtn.style.display = 'none';
+            } else {
+                // Reset to collapsed state for 'all'
+                if (projectsGrid) projectsGrid.classList.remove('expanded');
+                if (showMoreBtn) {
+                    showMoreBtn.style.display = 'flex';
+                    showMoreBtn.classList.remove('expanded');
+                    const btnText = showMoreBtn.querySelector('span');
+                    if (btnText) btnText.textContent = 'Toon alle projecten';
+                }
+            }
+
             // Filter cards
             projectCards.forEach((card) => {
                 const categories = card.getAttribute('data-category').split(' ');
 
                 if (filter === 'all' || categories.includes(filter)) {
                     card.classList.remove('hidden');
+                    card.style.display = '';
                 } else {
                     card.classList.add('hidden');
+                    card.style.display = 'none';
                 }
             });
 
