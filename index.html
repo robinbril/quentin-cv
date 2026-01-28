@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robin Bril | AI Engineer</title>
-    <meta name="description" content="Portfolio van Robin Bril, Senior AI Specialist en Data Consultant.">
+    <title>Christiaan Warner | Brand & Creative Strategist</title>
+    <meta name="description" content="Portfolio van Christiaan Warner, Brand & Creative Strategist gespecialiseerd in Sonic Branding.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -14,70 +14,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Open+Sans+Condensed:wght@300;700&display=swap"
         rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="ai-styles.css">
-    <link rel="stylesheet" href="apple-premium.css">
+    <link rel="stylesheet" href="minimalist-theme.css">
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body>
+<body class="dark-theme">
     <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-content">
-            <div class="code-header">
-                <div class="header-left">
-                    <span class="file-name">portfolio.init</span>
-                </div>
-                <div class="header-right">
-                    <span class="status-dot"></span>
-                    <span class="status-text">Loading</span>
-                </div>
-            </div>
-
-            <div class="code-editor">
-                <div class="code-line">
-                    <span class="line-number">1</span>
-                    <span class="keyword">import</span> <span class="variable">{ Portfolio }</span> <span
-                        class="keyword">from</span> <span class="string">'@robin/core'</span>
-                </div>
-                <div class="code-line">
-                    <span class="line-number">2</span>
-                    <span class="keyword">import</span> <span class="variable">{ AIProjects, Experience }</span> <span
-                        class="keyword">from</span> <span class="string">'@robin/components'</span>
-                </div>
-                <div class="code-line">
-                    <span class="line-number">3</span>
-                </div>
-                <div class="code-line">
-                    <span class="line-number">4</span>
-                    <span class="comment">// Initialize portfolio instance</span>
-                </div>
-                <div class="code-line">
-                    <span class="line-number">5</span>
-                    <span class="keyword">const</span> <span class="variable">app</span> <span class="operator">=</span>
-                    <span class="keyword">new</span> <span class="class">Portfolio</span><span class="bracket">()</span>
-                </div>
-                <div class="code-line">
-                    <span class="line-number">6</span>
-                    <span class="variable">app</span><span class="operator">.</span><span
-                        class="method">render</span><span class="bracket">()</span>
-                </div>
-            </div>
-
-            <div class="progress-container">
-                <div class="progress-bar-wrapper">
-                    <div class="progress-bar" id="progress-bar"></div>
-                </div>
-                <div class="progress-info">
-                    <span class="progress-text">Initializing...</span>
-                    <span class="progress-percentage" id="progress-percentage">0%</span>
-                </div>
+    <!-- Sleek Preloader -->
+    <!-- Sleek Preloader -->
+    <div id="loader" class="loader">
+        <div class="particles">
+            <div class="p"></div><div class="p"></div><div class="p"></div>
+            <div class="p"></div><div class="p"></div><div class="p"></div>
+        </div>
+        <div class="loader-content-wrap">
+            <div class="logo">CW.</div>
+            <!-- Expanded sonic waveform visualization -->
+            <div class="waveform">
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
             </div>
         </div>
     </div>
@@ -86,12 +51,12 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">RB<span class="dot">.</span></a>
+            <a href="#home" class="logo">CW<span class="dot">.</span></a>
             <div class="nav-links">
                 <a href="#about">Over Mij</a>
                 <a href="#experience">Ervaring</a>
                 <a href="#projects">Projecten</a>
-                <a href="#skills">Skills</a>
+                <a href="#services">Services</a>
                 <a href="#contact" class="btn-primary">Contact</a>
             </div>
             <div class="nav-actions">
@@ -109,25 +74,25 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="hero-bg.mp4" type="video/mp4">
-            </video>
-            <div class="hero-content">
-                <h1>AI Engineer</h1>
+            <div id="hero-particles"></div>
+            <!-- Grain Overlay -->
+            <div class="hero-grain"></div>
+            
+            <div class="hero-content minimalist-hero">
+                <h1 class="hero-title">BRAND & CREATIVE STRATEGIST</h1>
+                
                 <p class="hero-subtitle">
-                    Ik bouw enterprise AI-oplossingen die écht werken.<br>
-                    Ingezet binnen meerdere grote Nederlandse organisaties.
+                    Ik bouw merk- en contentstrategieën<br>
+                    waarin jouw doelgroep je merk persoonlijk leert kennen.
+                    <br><br>
+                    <span class="subtitle-secondary">Ingezet bij meerdere wereldwijde merken.</span>
                 </p>
-
-                <div class="hero-actions">
-                    <a href="#projects" class="btn-primary">
-                        <i data-lucide="arrow-right"></i>
-                        Bekijk Projecten
-                    </a>
-                    <a href="#contact" class="btn-secondary">
-                        <i data-lucide="mail"></i>
-                        Contact
-                    </a>
+                
+                <!-- Bullets removed for ultra-minimalism -->
+                
+                <div class="scroll-indicator">
+                    <span>Scroll voor werk</span>
+                    <i data-lucide="chevron-down"></i>
                 </div>
             </div>
         </section>
@@ -142,31 +107,26 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p>
-                            Robin is een <strong>Senior AI Specialist</strong> die grootschalige AI-oplossingen van
-                            concept
-                            naar productie brengt.
-                            Van <em>DefGPT Pro</em> voor enterprise-organisaties tot productie-automatiseringen voor
-                            scale-ups.
+                            Christiaan is een <strong>Brand & Creative Strategist</strong> die merkstrategieën combineert met creatieve uitvoering.
+                            Van <em>Sonic Branding</em> voor internationale merken tot cross-channel campagnes voor scale-ups.
                         </p>
                         <p>
-                            Mijn achtergrond als <strong>Lean Six Sigma Master Black Belt</strong> en ondernemer zorgt
-                            ervoor dat ik AI inzet waar het processen verbetert, niet als technisch doel op zich.
-                            Ik specialiseer mij in <strong>multi-agent systemen</strong> en
-                            <strong>RAG-architecturen</strong>.
+                            Mijn achtergrond combineert zakelijk inzicht met creatieve strategie. Ik specialiseer mij in <strong>Sonic Branding</strong> en
+                            <strong>merkstrategieën</strong> die écht landen.
                         </p>
                     </div>
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <span class="stat-number">5</span>
+                            <span class="stat-number">10+</span>
                             <span class="stat-label">Jaren Ervaring</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">17</span>
-                            <span class="stat-label">AI Tools Gebouwd</span>
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Brand Campaigns</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">200</span>
-                            <span class="stat-label">Production Deployments</span>
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">International Brands</span>
                         </div>
                     </div>
                 </div>
@@ -177,14 +137,13 @@
                             <i data-lucide="map-pin"></i>
                             <span>Amsterdam</span>
                         </li>
-
                         <li>
                             <i data-lucide="languages"></i>
                             <span>Nederlands (Native), Engels (Fluent)</span>
                         </li>
                         <li>
                             <i data-lucide="graduation-cap"></i>
-                            <span>BSc Bedrijfskunde (Cum Laude)</span>
+                            <span>BBA Ondernemerschap - Team Academy</span>
                         </li>
                     </ul>
                 </div>
@@ -197,582 +156,438 @@
                 <h2>Werkervaring</h2>
             </div>
             <div class="timeline">
-                <!-- Virelio -->
+                <!-- Experience 1 -->
                 <div class="timeline-item">
-                    <div class="timeline-date">2024 – heden</div>
+                    <div class="timeline-date">2016 – heden</div>
                     <div class="timeline-content glow-card">
                         <div class="role-header">
-                            <h3>Artificial Intelligence Developer</h3>
-                            <span class="company">Virelio – Amsterdam</span>
+                            <h3>Brand & Creative Strategist</h3>
+                            <span class="company">Zelfstandig ondernemer – Amsterdam</span>
                         </div>
                         <ul class="role-description">
-                            <li>Ontwierp en lanceerde AI-tools en honderden productieklare automatiseringen
-                                voor scale-ups en corporates</li>
-                            <li>Bouwde een privacy-first AI-assistent voor grote interne documentverzamelingen,
-                                met snelle en betrouwbare beantwoording via Slack, Teams en WebRTC</li>
-                            <li>Implementeerde on-premise multi-agent systemen met RAG-knowledge bases, waardoor klanten
-                                wekelijks meerdere uren handmatig werk besparen</li>
+                            <li>Begeleidde merktransformaties voor premium merken, met gemiddeld 40% hogere merkherkenning</li>
+                            <li>Ontwikkelde award-winning sonic branding voor internationale merken zoals Jägermeister en Porsche</li>
+                            <li>Verantwoordelijk voor cross-channel campagnes met budgetten tot €500.000+, met aantoonbare ROI-verbetering</li>
+                            <li>Werkte nauw samen met en gaf richting aan multidisciplinaire creatieve teams voor Fortune 500-bedrijven en snelgroeiende scale-ups</li>
                         </ul>
                         <div class="tags">
-                            <span>Python</span>
-                            <span>Multi-agent AI</span>
-                            <span>RAG</span>
-                            <span>WebRTC</span>
+                            <span>Brand Strategy</span>
+                            <span>Sonic Branding</span>
+                            <span>Creative Direction</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Capgemini -->
+                <!-- Experience 2 -->
                 <div class="timeline-item">
-                    <div class="timeline-date">2024 – heden</div>
+                    <div class="timeline-date">2021 – 2023</div>
                     <div class="timeline-content glow-card">
                         <div class="role-header">
-                            <h3>Dataconsultant & Artificial Intelligence Developer</h3>
-                            <span class="company">Capgemini – Amsterdam</span>
+                            <h3>Creative Strategist</h3>
+                            <span class="company">On a Daily Basis – Amsterdam</span>
                         </div>
                         <ul class="role-description">
-                            <li>In opdracht bij Ministerie van Defensie als lead developer van DefGPT Pro: het eerste
-                                volledig private on-premise AI-platform voor een enterprise-organisatie. Projectleider
-                                namens Analytics.</li>
-                            <li>Lid van het Core AI Team: verantwoordelijk voor alle AI-nieuwsbrieven en deelname aan
-                                strategische zakelijke partnergesprekken omtrent AI</li>
-                            <li>Ontwikkelde multi-agent LLM-architectuur met MCP-servers en enterprise knowledge base
-                                integratie</li>
-                            <li>Ontwierp en implementeerde operationele Power BI- en SAP-dashboards voor
-                                militair-strategisch inzicht, inclusief volledige datacleansing en validatie</li>
-                            <li>Leidde wekelijkse requirements-workshops met senior stakeholders om BI- en AI-behoeften
-                                te vertalen naar technische oplossingen</li>
+                            <li>Ontwikkelde creatieve strategieën voor internationale A-merken</li>
+                            <li>Vertaalde data en merkdoelstellingen naar heldere creatieve richtingen en campagnes</li>
+                            <li>Begeleidde campagnes van strategie en concept tot livegang</li>
                         </ul>
                         <div class="tags">
-                            <span>Multi-agent AI</span>
-                            <span>MCP-servers</span>
-                            <span>Power BI</span>
-                            <span>SAP</span>
-                            <span>Data Governance</span>
+                            <span>Creative Strategy</span>
+                            <span>Brand Development</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- ROAD -->
+                <!-- Experience 3 -->
                 <div class="timeline-item">
-                    <div class="timeline-date">2022 – 2024</div>
+                    <div class="timeline-date">2019 – 2021</div>
                     <div class="timeline-content glow-card">
                         <div class="role-header">
-                            <h3>Data-analist</h3>
-                            <span class="company">ROAD – Nederland</span>
+                            <h3>Logistics Leads Agent</h3>
+                            <span class="company">Homerr – Amsterdam</span>
                         </div>
                         <ul class="role-description">
-                            <li>Leverde op maat gemaakte Looker- en BigQuery-dashboards voor meerdere afdelingen binnen
-                                het Google-ecosysteem</li>
-                            <li>Analyseerde markttrends, KPI's en concurrentieprestaties en presenteerde datagedreven
-                                inzichten op bestuursniveau</li>
+                            <li>Schaalde het logistieke partnernetwerk van 50 naar 200+ actieve partners binnen 18 maanden</li>
+                            <li>Verbeterde onboardingprocessen, waardoor partners 60% sneller operationeel waren</li>
+                            <li>Ontwikkelde en beheerde partnerships die direct bijdroegen aan de groei tijdens de scale-upfase</li>
                         </ul>
                         <div class="tags">
-                            <span>Looker</span>
-                            <span>BigQuery</span>
-                            <span>Google Cloud</span>
+                            <span>Partnership Management</span>
+                            <span>Scaling</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Quotum Consultancy -->
+                <!-- Experience 4 -->
                 <div class="timeline-item">
-                    <div class="timeline-date">2021 – 2024</div>
+                    <div class="timeline-date">2016 – 2018</div>
                     <div class="timeline-content glow-card">
                         <div class="role-header">
-                            <h3>Oprichter</h3>
-                            <span class="company">Quotum Consultancy – Nederland</span>
+                            <h3>Community Operations Specialist</h3>
+                            <span class="company">Uber – Amsterdam</span>
                         </div>
                         <ul class="role-description">
-                            <li>Bouwde en beheerde een full-stack financieel dataplatform dat on-chain, derivaten- en
-                                macrodata combineert</li>
-                            <li>Groeide naar internationale betalende abonnees door continue doorontwikkeling en
-                                CI/CD</li>
+                            <li>Identificeerde knelpunten in dagelijkse operations en voerde verbeteringen door die de klanttevredenheid met 25% verhoogden</li>
+                            <li>Analyseerde operationele data om inefficiënties in workflows zichtbaar te maken en op te lossen</li>
+                            <li>Ondersteunde de implementatie van schaalbare operationele processen tijdens Uber's snelle groei in Amsterdam</li>
                         </ul>
                         <div class="tags">
-                            <span>Full-stack Dev</span>
-                            <span>Blockchain Data</span>
-                            <span>CI/CD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SBB -->
-                <div class="timeline-item">
-                    <div class="timeline-date">2020 – 2021</div>
-                    <div class="timeline-content glow-card">
-                        <div class="role-header">
-                            <h3>Traineeship Procesmanagement</h3>
-                            <span class="company">SBB – Nederland</span>
-                        </div>
-                        <ul class="role-description">
-                            <li>Optimaliseerde workflows voor bouwprojecten met Lean Six Sigma-methodiek</li>
-                            <li>Implementeerde gestandaardiseerd documentatiesysteem, wat herbewerking en projectkosten
-                                significant verlaagde</li>
-                        </ul>
-                        <div class="tags">
-                            <span>Lean Six Sigma</span>
-                            <span>Process Optimization</span>
+                            <span>Operations</span>
+                            <span>Data Analysis</span>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </section>
 
-        <!-- AI Tools Portfolio Section -->
-        <section id="projects" class="section ai-portfolio-section">
-            <div class="section-header contact-header">
-                <h2>AI-Tools Portfolio</h2>
+        <!-- AI Tools Portfolio Section -> Renamed to Selected Work -->
+        <!-- WORK SECTION: Unified Premium Grid (4-Col) -->
+        <section id="work" class="section">
+            <div class="section-header minimalist-header">
+                <h2>WORK</h2>
+                <p>World of Music & Sound Design</p>
             </div>
-            <p class="portfolio-subtitle">15+ zelfstandig gebouwde AI-toepassingen – van RAG-agents tot multimodal
-                editors</p>
 
-            <!-- Featured Project -->
-            <div class="featured-project">
-                <div class="featured-badge">
-                    <i data-lucide="star"></i>
-                    <span>Featured Project</span>
-                </div>
-                <div class="featured-content">
-                    <h3>DefGPT Pro – Enterprise AI-assistent</h3>
-                    <p>Privacy-conforme AI-assistent voor Defensie. Enterprise-grade deployment met
-                        strikte security requirements.</p>
-
-                    <div class="featured-metrics">
-                        <div class="metric">
-                            <span class="metric-number">Enterprise</span>
-                            <span class="metric-label">Schaal</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-number">100%</span>
-                            <span class="metric-label">On-premise</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-number">2024</span>
-                            <span class="metric-label">Productie</span>
+            <div class="work-grid">
+                <!-- 1. Warner Music -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-warner.png" alt="Warner Music Benelux">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Warner Music Benelux</span>
+                        <h3 class="work-title">New Signee Campaign</h3>
+                        <!-- Description Overlay -->
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Launch campaign for emerging artists within the Warner Music ecosystem. Strategy & Campaign.</p>
                         </div>
                     </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 2. Clan de Banlieue -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-banlieue.png" alt="Clan de Banlieue">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Clan de Banlieue</span>
+                        <h3 class="work-title">22 Drop Campaign</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Urban lifestyle campaign positioning the new collection within the community. Campaign & Production.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 3. Jägermeister FM -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-jager.png" alt="Jägermeister FM">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Jägermeister</span>
+                        <h3 class="work-title">Jägermeister FM</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">First radio station powered by the community, featuring a custom sonic identity. Sonic Branding.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 4. Porsche -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-porsche.png" alt="Porsche Nederland">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Porsche Nederland</span>
+                        <h3 class="work-title">Taycan Launch</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Defining the sound of silence for the electric revolution. Sonic Branding & Music.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 5. NOC*NSF -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-nocnsf.png" alt="NOC*NSF">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">NOC*NSF</span>
+                        <h3 class="work-title">Centrum Veilige Sport</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">National awareness campaign for safe sports environments. Strategy & Campaign.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 6. Eredivisie -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-eredivisie.png" alt="Eredivisie">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Eredivisie x Derbystar</span>
+                        <h3 class="work-title">The Ball 22/23</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Revealing the new official match ball with a rhythmic, high-energy film. Sound Design.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 7. Van Gils -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-vangils.png" alt="Van Gils">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Van Gils</span>
+                        <h3 class="work-title">Brand Campaign</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Refining the auditory identity of a classic menswear brand. Music & Strategy.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 8. BRON Healthcare -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-bron.png" alt="BRON Healthcare">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">BRON Healthcare</span>
+                        <h3 class="work-title">Brand Film</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Communicating innovation in healthcare through sound. Sound Design.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 9. ICT Shenron -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-shenron.png" alt="ICT Shenron">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">ICT Zakenwaarnemer</span>
+                        <h3 class="work-title">Shenron Campaign</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Digital transformation campaign visualization. Creative Direction.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 10. Red Glow -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-redglow.png" alt="Red Glow">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Red Glow</span>
+                        <h3 class="work-title">Brand Activation</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Immersive audio-visual experience for brand launch. Activation.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 11. Jägermeister x Bakkie -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-bakkie.png" alt="Bakkie Bakkie">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Jägermeister</span>
+                        <h3 class="work-title">x Bakkie Bakkie</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Partnership activation bringing music to the streets.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 12. Space X / Red Moss -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-redmoss.png" alt="Space X Red Moss">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Red Moss X Chris Warner</span>
+                        <h3 class="work-title">Space X</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Futuristic soundscapes for space exploration concept. Sound Design.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 13. OADB Showreel -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-oadb.png" alt="On a Daily Basis">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">On a Daily Basis</span>
+                        <h3 class="work-title">Agency Showreel</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Highlighting the energy and impact of OADB's work. Editing & Music.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 14. Red Bull Unlocked -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-redbull.png" alt="Red Bull Unlocked">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Red Bull</span>
+                        <h3 class="work-title">Unlocked Event</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Capturing the nightlife energy of the Unlocked event series. Content Strategy.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
+                </div>
+
+                <!-- 15. Daily Brand -->
+                <div class="work-card">
+                    <div class="work-thumb">
+                        <img src="thumb-daily-brand.png" alt="Daily Brand">
+                        <div class="play-overlay"><div class="play-icon"><i data-lucide="play"></i></div></div>
+                    </div>
+                    <div class="work-info">
+                        <span class="client-name">Daily Brand</span>
+                        <h3 class="work-title">Identity Design</h3>
+                        <div class="work-desc-overlay">
+                            <p class="desc-text">Visual and sonic identity for a new creative agency. Branding.</p>
+                        </div>
+                    </div>
+                    <div class="info-btn"><i data-lucide="info"></i></div>
                 </div>
             </div>
+        </section>
 
-            <!-- Filter Bar -->
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">Alle</button>
-                <button class="filter-btn" data-filter="rag">RAG</button>
-                <button class="filter-btn" data-filter="agents">Agents</button>
-                <button class="filter-btn" data-filter="vision">Vision</button>
-                <button class="filter-btn" data-filter="automation">Automation</button>
-                <button class="filter-btn" data-filter="websites">Websites</button>
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="section-header">
+                <h2>Services</h2>
+                <div class="line"></div>
             </div>
-
-            <div class="ai-projects-grid">
-                <!-- Project 1: AI Image Editor -->
-                <div class="ai-project-card" data-category="vision">
-                    <div class="project-icon-wrapper icon-violet">
-                        <i data-lucide="sparkles"></i>
-                    </div>
-                    <h3>AI Image Editor</h3>
-                    <p>Full-stack webapp met Stable Diffusion + ControlNet. Drag & drop editor met prompt-suggesties en
-                        one-click upscaling. <strong>Actief gebruikt in productie.</strong></p>
-                    <div class="project-tags">
-                        <span class="tag-violet">Stable Diffusion</span>
-                        <span class="tag-blue">Next.js</span>
-                        <span class="tag-pink">Vision AI</span>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Sonic Branding</h3>
+                    <div class="skill-tags">
+                        <span>Sound Logo Design</span>
+                        <span>Brand Music</span>
+                        <span>Audio Strategy</span>
+                        <span>Voice Branding</span>
+                        <span>Soundscapes</span>
                     </div>
                 </div>
-
-                <!-- Project 2: On-Premise RAG -->
-                <div class="ai-project-card" data-category="rag">
-                    <div class="project-icon-wrapper icon-emerald">
-                        <i data-lucide="search"></i>
-                    </div>
-                    <h3>On-Premise RAG Enterprise</h3>
-                    <p>Private kennisbank met RAG-architectuur voor enterprise-documentatie. Ontsloten via eigen API met
-                        <strong>integratie in bestaande systemen.</strong>
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag-emerald">Llama 3</span>
-                        <span class="tag-green">Qdrant</span>
-                        <span class="tag-blue">FastAPI</span>
+                <div class="skill-category">
+                    <h3>Brand Strategy</h3>
+                    <div class="skill-tags">
+                        <span>Brand Positioning</span>
+                        <span>Creative Concepts</span>
+                        <span>Content Strategy</span>
+                        <span>Campaign Development</span>
+                        <span>Brand Identity</span>
                     </div>
                 </div>
-
-                <!-- Project 3: Multi-Agent -->
-                <div class="ai-project-card" data-category="agents">
-                    <div class="project-icon-wrapper icon-blue">
-                        <i data-lucide="bot"></i>
-                    </div>
-                    <h3>Full-Stack Multi-Agent</h3>
-                    <p>Autonoom multi-agent systeem met gespecialiseerde agents (research, code, review) voor
-                        end-to-end taken binnen afgebakende workflows.</p>
-                    <div class="project-tags">
-                        <span class="tag-blue">CrewAI</span>
-                        <span class="tag-indigo">LangGraph</span>
-                        <span class="tag-purple">Claude 3.5</span>
-                    </div>
-                </div>
-
-                <!-- Project 4: Outlook Agenda AI -->
-                <div class="ai-project-card" data-category="automation">
-                    <div class="project-icon-wrapper icon-amber">
-                        <i data-lucide="calendar"></i>
-                    </div>
-                    <h3>Outlook Agenda AI</h3>
-                    <p>Automatische planning met conflict-detectie via Microsoft Graph. Analyseert inbox-context
-                        en genereert afspraken met follow-up reminders.</p>
-                    <div class="project-tags">
-                        <span class="tag-amber">GPT-4</span>
-                        <span class="tag-orange">Outlook Graph</span>
-                        <span class="tag-yellow">Python</span>
-                    </div>
-                </div>
-
-                <!-- Project 5: LinkedIn AI Outreach -->
-                <div class="ai-project-card" data-category="automation">
-                    <div class="project-icon-wrapper icon-rose">
-                        <i data-lucide="users"></i>
-                    </div>
-                    <h3>LinkedIn AI Outreach</h3>
-                    <p>Geautomatiseerde outreach met rate-limiting en platform-safe integraties. Profielen vinden,
-                        gepersonaliseerde berichten genereren en versturen.</p>
-                    <div class="project-tags">
-                        <span class="tag-rose">Puppeteer</span>
-                        <span class="tag-red">Gemini Pro</span>
-                        <span class="tag-pink">SerpAPI</span>
-                    </div>
-                </div>
-
-                <!-- Project 6: AI Notulist -->
-                <div class="ai-project-card" data-category="automation">
-                    <div class="project-icon-wrapper icon-indigo">
-                        <i data-lucide="mic"></i>
-                    </div>
-                    <h3>AI Notulist & Meeting Planner</h3>
-                    <p>Realtime audio-verwerking via WebRTC met transcriptie, samenvatting en actiepunten.
-                        Ontworpen met fallback-scenario's voor verschillende omgevingen.</p>
-                    <div class="project-tags">
-                        <span class="tag-indigo">Whisper</span>
-                        <span class="tag-blue">GPT-4</span>
-                        <span class="tag-cyan">WebRTC</span>
-                    </div>
-                </div>
-
-                <!-- Project 7: AI Website Builder -->
-                <div class="ai-project-card" data-category="agents">
-                    <div class="project-icon-wrapper icon-teal">
-                        <i data-lucide="layout"></i>
-                    </div>
-                    <h3>AI Website Builder</h3>
-                    <p>Van idee tot live deployment via geautomatiseerde AI-pipeline. Genereert Next.js sites
-                        met copy, afbeeldingen en one-click deploy.</p>
-                    <div class="project-tags">
-                        <span class="tag-teal">GPT-4</span>
-                        <span class="tag-green">Vercel AI SDK</span>
-                        <span class="tag-teal">DALL·E 3</span>
-                    </div>
-                </div>
-
-                <!-- Project 8: Personal Agent -->
-                <div class="ai-project-card" data-category="agents">
-                    <div class="project-icon-wrapper icon-pink">
-                        <i data-lucide="brain"></i>
-                    </div>
-                    <h3>Personal Full-Stack Agent</h3>
-                    <p>Autonome persoonlijke agent voor e-mail, agenda en research binnen afgebakende taken.
-                        Werkt met memory en tools voor dagelijkse operaties.</p>
-                    <div class="project-tags">
-                        <span class="tag-pink">AutoGPT</span>
-                        <span class="tag-rose">Memory Layers</span>
-                        <span class="tag-red">Tools API</span>
-                    </div>
-                </div>
-
-                <!-- Project 9: AI Necklace Framework -->
-                <div class="ai-project-card" data-category="vision">
-                    <div class="project-icon-wrapper icon-cyan">
-                        <i data-lucide="gem"></i>
-                    </div>
-                    <h3>AI Necklace Visual Framework</h3>
-                    <p>Visueel model om RAG- en multi-agent architecturen inzichtelijk te maken voor
-                        niet-technische stakeholders. Gebruikt in workshops en architectuursessies.</p>
-                    <div class="project-tags">
-                        <span class="tag-cyan">Figma</span>
-                        <span class="tag-blue">SVG Interactive</span>
-                        <span class="tag-teal">Conceptual AI</span>
-                    </div>
-                </div>
-
-                <!-- Project 10: Claude Workflow -->
-                <div class="ai-project-card" data-category="automation">
-                    <div class="project-icon-wrapper icon-purple">
-                        <i data-lucide="settings"></i>
-                    </div>
-                    <h3>Claude Workflow Automator</h3>
-                    <p>Claude 3.5 prompt-technieken geïmplementeerd voor enterprise automatisering. Van artifacts
-                        tot MCP. <strong>Geïntegreerd in meerdere workflows.</strong></p>
-                    <div class="project-tags">
-                        <span class="tag-purple">Anthropic API</span>
-                        <span class="tag-violet">Artifacts</span>
-                        <span class="tag-magenta">MCP Servers</span>
-                    </div>
-                </div>
-
-                <!-- Project 11: Private Llama Stack -->
-                <div class="ai-project-card" data-category="rag">
-                    <div class="project-icon-wrapper icon-slate">
-                        <i data-lucide="shield"></i>
-                    </div>
-                    <h3>Private On-Prem Llama 3 Stack</h3>
-                    <p>Geoptimaliseerde lokale Llama-stack voor offline inference in gesloten omgevingen.
-                        Gebruikt voor experimenten en validatie binnen secure development.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag-slate">Llama 3 70B</span>
-                        <span class="tag-gray">Ollama</span>
-                        <span class="tag-dark">Docker</span>
-                    </div>
-                </div>
-
-                <!-- Project 12: Knowledge Base Generator -->
-                <div class="ai-project-card" data-category="rag">
-                    <div class="project-icon-wrapper icon-orange">
-                        <i data-lucide="book-open"></i>
-                    </div>
-                    <h3>AI Knowledge Base Generator</h3>
-                    <p>Upload PDFs → auto-chunk, vectorize en web-UI voor search. Schaalbaar voor grote document sets.
-                        <strong>Goede
-                            retrieval accuracy.</strong>
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag-orange">Unstructured.io</span>
-                        <span class="tag-amber">LangChain</span>
-                        <span class="tag-yellow">Streamlit</span>
-                    </div>
-                </div>
-
-                <!-- Project 13: Research Agent -->
-                <div class="ai-project-card" data-category="agents">
-                    <div class="project-icon-wrapper icon-red">
-                        <i data-lucide="microscope"></i>
-                    </div>
-                    <h3>Autonomous Research Agent</h3>
-                    <p>Vraagt input → web-search, paper-lezing, rapport met bronnen en PDF-export.
-                        <strong>Genereert uitgebreide samenvattingen.</strong>
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag-red">Perplexity-style</span>
-                        <span class="tag-crimson">Browserless</span>
-                        <span class="tag-rose">Markdown Export</span>
-                    </div>
-                </div>
-
-                <!-- Project 14: Voice Meeting Assistant -->
-                <div class="ai-project-card" data-category="automation">
-                    <div class="project-icon-wrapper icon-lime">
-                        <i data-lucide="volume-2"></i>
-                    </div>
-                    <h3>Voice-First Meeting Assistant</h3>
-                    <p>Realtime speech-to-action: transcriptie → samenvatting → calendar. Offline fallback mogelijk.
-                        <strong>Robuust in verschillende omgevingen.</strong>
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag-lime">Whisper.cpp</span>
-                        <span class="tag-green">Local LLM</span>
-                        <span class="tag-teal">WebRTC</span>
-                    </div>
-                </div>
-
-                <!-- Project 16: Ecommerce Conversion AI -->
-                <div class="ai-project-card" data-category="automation">
-                    <div class="project-icon-wrapper icon-orange">
-                        <i data-lucide="shopping-cart"></i>
-                    </div>
-                    <h3>Ecommerce Conversion AI</h3>
-                    <p>Full-stack platform die productpagina's analyseert en automatisch copy, pricing en layout
-                        optimaliseert. <strong>Meetbare conversie-verbetering.</strong></p>
-                    <div class="project-tags">
-                        <span class="tag-orange">E-commerce</span>
-                        <span class="tag-blue">Next.js</span>
-                        <span class="tag-green">A/B Testing</span>
-                    </div>
-                </div>
-
-                <!-- Project 17: Social Media Autopilot -->
-                <div class="ai-project-card" data-category="automation agents">
-                    <div class="project-icon-wrapper icon-pink">
-                        <i data-lucide="share-2"></i>
-                    </div>
-                    <h3>Social Media Autopilot</h3>
-                    <p>AI-agent die content plant, genereert en publiceert op Instagram, LinkedIn en TikTok.
-                        <strong>Meer engagement met minder tijd.</strong>
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag-pink">Social AI</span>
-                        <span class="tag-violet">CrewAI</span>
-                        <span class="tag-blue">API Integrations</span>
-                    </div>
-                </div>
-
-                <!-- Project 22: REVIVE Ecommerce -->
-                <div class="ai-project-card" data-category="websites">
-                    <div class="project-icon-wrapper icon-rose">
-                        <i data-lucide="shopping-bag"></i>
-                    </div>
-                    <h3>REVIVE Serum Shop</h3>
-                    <p>High-converting ecommerce webshop voor haarserum met AI-gegenereerde copy en
-                        conversie-optimalisatie. <strong>Live: <a href="https://reviven.nl"
-                                target="_blank">reviven.nl</a></strong></p>
-                    <div class="project-tags">
-                        <span class="tag-rose">E-commerce</span>
-                        <span class="tag-blue">Next.js</span>
-                        <span class="tag-green">Shopify</span>
-                    </div>
-                </div>
-
-                <!-- Project 23: WL Bali Travel -->
-                <div class="ai-project-card" data-category="websites">
-                    <div class="project-icon-wrapper icon-sky">
-                        <i data-lucide="plane"></i>
-                    </div>
-                    <h3>WL Bali Travel</h3>
-                    <p>Premium travel website met booking integraties, villa showcases en dynamic pricing. <strong>Live:
-                            <a href="https://wlbali.com" target="_blank">wlbali.com</a></strong></p>
-                    <div class="project-tags">
-                        <span class="tag-sky">Travel</span>
-                        <span class="tag-violet">Booking API</span>
-                        <span class="tag-green">React</span>
-                    </div>
-                </div>
-
-                <!-- Project 24: Portfolio Website -->
-                <div class="ai-project-card" data-category="websites">
-                    <div class="project-icon-wrapper icon-violet">
-                        <i data-lucide="user"></i>
-                    </div>
-                    <h3>Portfolio Website</h3>
-                    <p>Interactieve developer portfolio met animated preloader, dark mode en premium UI. <strong>Live:
-                            <a href="https://robinbril.com" target="_blank">robinbril.com</a></strong></p>
-                    <div class="project-tags">
-                        <span class="tag-violet">Portfolio</span>
-                        <span class="tag-blue">Vanilla JS</span>
-                        <span class="tag-pink">CSS Animations</span>
-                    </div>
-                </div>
-
-                <!-- Project 25: Quotum Investment -->
-                <div class="ai-project-card" data-category="websites">
-                    <div class="project-icon-wrapper icon-amber">
-                        <i data-lucide="landmark"></i>
-                    </div>
-                    <h3>Quotum Investment</h3>
-                    <p>Investment platform met real-time portfolio tracking, market data en secure authentication.
-                        <strong>Live: <a href="https://quotum.org" target="_blank">quotum.org</a></strong>
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag-amber">FinTech</span>
-                        <span class="tag-green">Python</span>
-                        <span class="tag-blue">React</span>
+                <div class="skill-category">
+                    <h3>Creative Direction</h3>
+                    <div class="skill-tags">
+                        <span>Creative Leadership</span>
+                        <span>Team Management</span>
+                        <span>Production Oversight</span>
+                        <span>Quality Control</span>
+                        <span>Multi-channel Execution</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Show More Button -->
-            <button class="show-more-btn" id="showMoreProjects">
-                <span>Toon alle projecten</span>
-                <i data-lucide="chevron-down"></i>
-            </button>
-
-
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="section">
             <div class="section-header">
-                <h2>Technische Expertise</h2>
-                <div class="line"></div>
+                <h2>Expertise & Tools</h2>
             </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>AI & Machine Learning</h3>
-                    <div class="skill-tags">
-                        <span>Python</span>
-                        <span>Multi-agent Systems</span>
-                        <span>RAG Architecturen</span>
-                        <span>MCP Servers</span>
-                        <span>LLM Integratie</span>
-                        <span>TensorFlow</span>
-                    </div>
+            
+            <div class="minimalist-skills">
+                <div class="skill-column">
+                    <h3>Core Expertise</h3>
+                    <ul class="clean-list">
+                        <li>Brand Strategy</li>
+                        <li>Creative Direction</li>
+                        <li>Sonic Branding</li>
+                        <li>Campaign Development</li>
+                    </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Development</h3>
-                    <div class="skill-tags">
-                        <span>TypeScript</span>
-                        <span>JavaScript</span>
-                        <span>SQL</span>
-                        <span>HTML/CSS</span>
-                        <span>API Integratie</span>
-                        <span>CI/CD</span>
-                    </div>
+                
+                <div class="skill-column">
+                    <h3>Creative Tools</h3>
+                    <ul class="clean-list">
+                        <li><strong>Abelton & Logic</strong> – Sonic Identities</li>
+                        <li><strong>Keynote & PowerPoint</strong> – C-Level Pitches</li>
+                        <li><strong>Adobe Suite</strong> – Creative Direction</li>
+                    </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <div class="skill-tags">
-                        <span>Azure (AI-102)</span>
-                        <span>Google Cloud</span>
-                        <span>Power BI</span>
-                        <span>SAP</span>
-                        <span>Looker</span>
-                        <span>Docker</span>
-                    </div>
+
+                <div class="skill-column">
+                    <h3>Organisatie & Talen</h3>
+                    <ul class="clean-list">
+                        <li>Google Workspace & Office 365</li>
+                        <li>Nederlands (Native)</li>
+                        <li>Engels (Fluent)</li>
+                        <li>Duits (Basic)</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section id="education" class="section">
+        <!-- Education Section (Moved to bottom) -->
+        <section id="education" class="section compact-section">
             <div class="section-header">
                 <h2>Opleiding</h2>
-                <div class="line"></div>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2018 – 2023</div>
-                    <div class="timeline-content glow-card">
-                        <div class="role-header">
-                            <h3>BSc Bedrijfskunde (cum laude)</h3>
-                            <span class="company">Hogeschool van Amsterdam</span>
-                        </div>
-                        <p class="role-description">
-                            Minor: Business Process Analytics Management
-                        </p>
-                    </div>
+            
+            <div class="minimalist-education">
+                <div class="edu-item">
+                    <span class="edu-school">Team Academy</span>
+                    <span class="edu-degree">BBA Entrepreneurship</span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications" class="section">
-            <div class="section-header">
-                <h2>Top Certificeringen</h2>
-                <div class="line"></div>
-            </div>
-            <div class="certifications-grid">
-                <div class="cert-item glow-card">
-                    <i data-lucide="award"></i>
-                    <h4>Azure AI Engineer (AI-102)</h4>
-                    <p>Microsoft</p>
+                <div class="edu-item">
+                    <span class="edu-school">Technische Universiteit Delft</span>
+                    <span class="edu-degree">Industrial Design (Propedeuse)</span>
                 </div>
-                <div class="cert-item glow-card">
-                    <i data-lucide="graduation-cap"></i>
-                    <h4>Deep Learning Specialization</h4>
-                    <p>Stanford University</p>
-                </div>
-                <div class="cert-item glow-card">
-                    <i data-lucide="trending-up"></i>
-                    <h4>Lean Six Sigma Master Black Belt</h4>
-                    <p>LinkedIn Academy</p>
+                <div class="edu-item">
+                    <span class="edu-school">Alkwin Kollege</span>
+                    <span class="edu-degree">VWO NG & NT</span>
                 </div>
             </div>
         </section>
@@ -781,12 +596,12 @@
         <section id="contact" class="section">
             <div class="container">
                 <div class="section-header contact-header">
-                    <h2>Laten we jouw AI-project bespreken</h2>
+                    <h2>Laten we jouw brand project bespreken</h2>
                 </div>
 
                 <!-- Primary CTA -->
                 <div class="primary-cta">
-                    <a href="https://wa.me/31640446732" target="_blank" rel="noopener noreferrer"
+                    <a href="https://wa.me/31650742676" target="_blank" rel="noopener noreferrer"
                         class="cta-primary-btn">
                         <span class="cta-title">Start gesprek via WhatsApp</span>
                         <i data-lucide="arrow-right"></i>
@@ -797,144 +612,23 @@
                 <!-- Secondary Options -->
                 <p class="contact-divider">Of via:</p>
                 <div class="secondary-options">
-                    <a href="mailto:robin.bril@gmail.com" class="secondary-link">
+                    <a href="mailto:info@chriswarner.world" class="secondary-link">
                         <i data-lucide="mail"></i>
-                        <span>robin.bril@gmail.com</span>
+                        <span>info@chriswarner.world</span>
                     </a>
-                    <a href="tel:+31640446732" class="secondary-link">
+                    <a href="tel:+31650742676" class="secondary-link">
                         <i data-lucide="phone"></i>
-                        <span>06-4044 6732</span>
+                        <span>06-5074 2676</span>
                     </a>
-                </div>
-
-                <!-- Testimonial Quotes -->
-                <div class="testimonials-compact">
-                    <div class="quote-box">
-                        <p class="quote-text">"Very driven and motivated colleague who knows how to inspire others about
-                            AI. Robin is an indispensable AI support pillar both within and outside our project."</p>
-                        <div class="quote-author">
-                            <strong>Mark Vervuurt</strong>
-                            <span>Lead AI Engineer, Capgemini</span>
-                            <a href="https://www.linkedin.com/in/markvervuurt/" target="_blank"
-                                rel="noopener noreferrer" class="source-link" title="View LinkedIn Reference">
-                                <i data-lucide="info"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="quote-box">
-                        <p class="quote-text">"Robin is an exceptionally skilled professional. His analytical
-                            capabilities are top-notch, consistently delivering insights that drive informed business
-                            decisions."</p>
-                        <div class="quote-author">
-                            <strong>Giulio Piccolo</strong>
-                            <span>Lead Data Engineer, Capgemini</span>
-                            <a href="https://www.linkedin.com/in/giuliopiccolo/" target="_blank"
-                                rel="noopener noreferrer" class="source-link" title="View LinkedIn Reference">
-                                <i data-lucide="info"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
+    </main>
 
-        <!-- Footer -->
-
-        <!-- AI Contact Form Modal -->
-        <div id="contact-modal" class="contact-modal">
-            <div class="modal-overlay"></div>
-            <div class="modal-content">
-                <button class="modal-close" aria-label="Close modal">
-                    <i data-lucide="x"></i>
-                </button>
-
-                <div class="modal-header">
-                    <div class="ai-badge">
-                        <span class="ai-pulse"></span>
-                        <span>AI-Powered Response</span>
-                    </div>
-                    <h2>Laat je nummer achter</h2>
-                    <p>Robin neemt binnen 24 uur contact op via WhatsApp of telefoon</p>
-                </div>
-
-                <form id="ai-contact-form" class="ai-form">
-                    <div class="form-group">
-                        <label for="contact-name">
-                            <i data-lucide="user"></i>
-                            Naam
-                        </label>
-                        <input type="text" id="contact-name" name="name" placeholder="Jouw naam" required
-                            autocomplete="name">
-                        <span class="input-glow"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contact-phone">
-                            <i data-lucide="phone"></i>
-                            Telefoonnummer
-                        </label>
-                        <input type="tel" id="contact-phone" name="phone" placeholder="+31 6 1234 5678" required
-                            autocomplete="tel">
-                        <span class="input-glow"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contact-message">
-                            <i data-lucide="message-square"></i>
-                            Bericht (optioneel)
-                        </label>
-                        <textarea id="contact-message" name="message" placeholder="Waar kan Robin je mee helpen?"
-                            rows="4"></textarea>
-                        <span class="input-glow"></span>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="submit-btn">
-                            <span class="btn-text">Verstuur Aanvraag</span>
-                            <span class="btn-loader"></span>
-                            <i data-lucide="send"></i>
-                        </button>
-                    </div>
-
-                    <div class="form-footer">
-                        <i data-lucide="shield-check"></i>
-                        <span>Jouw gegevens worden veilig verwerkt en niet gedeeld</span>
-                    </div>
-                </form>
-
-                <div class="form-success hidden">
-                    <div class="success-icon">
-                        <i data-lucide="check-circle"></i>
-                    </div>
-                    <h3>Bedankt voor je aanvraag!</h3>
-                    <p>Robin neemt zo snel mogelijk contact met je op.</p>
-                </div>
-
-                <!-- AI Background Animation -->
-                <div class="modal-bg-animation">
-                    <div class="ai-orb ai-orb-1"></div>
-                    <div class="ai-orb ai-orb-2"></div>
-                    <div class="ai-orb ai-orb-3"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- WhatsApp Widget -->
-        <div class="whatsapp-widget">
-            <div class="whatsapp-status">
-                <span class="status-dot"></span>
-                <span class="status-text">Robin is online!</span>
-            </div>
-            <a href="https://wa.me/31640446732" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
-                <i data-lucide="message-circle"></i>
-            </a>
-        </div>
-
-        <script src="script.js"></script>
-        <script>
-            lucide.createIcons();
-        </script>
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
