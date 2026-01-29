@@ -1150,6 +1150,21 @@
     animation-delay: 1s;
 }
 
+/* Mobile searchlight optimization */
+@media (max-width: 768px) {
+    .hero-title::before {
+        filter: blur(15px); /* Reduced blur for performance */
+        opacity: 0.8; /* Slightly dimmed */
+        width: 95%; /* Full width on mobile */
+        left: 2.5%;
+    }
+    
+    .hero-title::after {
+        filter: blur(18px);
+        opacity: 0.3;
+    }
+}
+
 /* Ultra-soft secondary layer */
 .hero-title::after {
     content: '';
@@ -1179,7 +1194,7 @@
 /* 3. Refined Subtitle (Sleeker Typography) */
 .hero-subtitle {
     font-family: 'Open Sans', sans-serif;
-    font-size: clamp(1.15rem, 1.65vw, 1.6rem); /* Sleeker */
+    font-size: clamp(1rem, 1.65vw, 1.6rem); /* Mobile-first */
     line-height: 1.75; /* Better readability */
     color: rgba(255, 255, 255, 0.92) !important;
     font-weight: 300 !important;
@@ -1198,6 +1213,46 @@
     color: #a0a0a0; /* Slightly muted secondary line */
     font-size: 0.9em;
     font-weight: 400;
+}
+
+/* Mobile Hero Typography */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: clamp(3rem, 12vw, 5rem) !important; /* Veel groter */
+        letter-spacing: 0.04em;
+        line-height: 1.1;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.1rem, 4.5vw, 1.4rem) !important; /* Groter & leesbaarder */
+        line-height: 1.7;
+        padding: 0 1.5rem;
+        max-width: 90%;
+    }
+    
+    .minimalist-hero {
+        gap: 3rem; /* Reduced gap on mobile */
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: clamp(2.5rem, 13vw, 4rem) !important; /* Extra groot voor kleine screens */
+        text-shadow: 
+            0 2px 4px rgba(0, 0, 0, 0.9),
+            0 0 40px rgba(212, 175, 55, 0.2);
+        letter-spacing: 0.02em;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 5vw, 1.2rem) !important;
+    }
+    
+    .subtitle-secondary {
+        margin-top: 1rem;
+        font-size: 0.9em;
+    }
 }
 
 /* Hero Animations */

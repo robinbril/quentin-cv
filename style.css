@@ -186,6 +186,16 @@ em {
     position: relative;
     padding-left: 2rem;
     border-left: 2px solid var(--border-color);
+    max-width: 900px; /* Prevent right-shift */
+    margin: 3rem auto; /* Center it */
+}
+
+/* Mobile timeline */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 1.5rem;
+        max-width: 100%;
+    }
 }
 
 .timeline-item {
@@ -1502,6 +1512,22 @@ body.light-theme .theme-toggle-btn .light-icon {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     margin-top: 3rem;
+    max-width: 1200px; /* Prevent excessive stretching */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile responsiveness for skills grid */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .skill-category {
+        padding: 1.5rem;
+    }
 }
 
 .skill-category {
