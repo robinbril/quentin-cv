@@ -1083,8 +1083,8 @@
     letter-spacing: 0.06em; /* Balanced kerning */
     text-transform: uppercase;
     
-    /* Pure White for dark theme - clean & modern */
-    color: #ffffff !important; /* Force wit */
+    /* Warm Champagne Ivory - subtiel goudgeel */
+    color: #faf6e8 !important; /* Warme ivoor met gouden ondertoon */
     
     /* Strong text shadow for readability against spotlight */
     text-shadow: 
