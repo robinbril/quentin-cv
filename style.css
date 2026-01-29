@@ -524,12 +524,12 @@ em {
 .nav-links a {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
+    color: var(--accent-primary);
 }
 
 .nav-links .btn-primary {
@@ -544,6 +544,7 @@ em {
 .nav-links .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+    color: var(--btn-primary-text);
 }
 
 .nav-actions {
@@ -860,6 +861,11 @@ body.light-theme .theme-toggle-btn .light-icon {
     font-size: 0.875rem;
     margin-bottom: 0.8rem;
     font-weight: 600;
+    position: relative;
+    z-index: 2; /* Zorg dat tekst boven de lijn ligt */
+    background: var(--bg-color); /* Achtergrondkleur om de lijn te 'breken' */
+    display: inline-block;
+    padding-right: 10px;
 }
 
 .timeline-content {
@@ -1444,6 +1450,9 @@ body.light-theme .theme-toggle-btn .light-icon {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .education-card {
@@ -1456,6 +1465,10 @@ body.light-theme .theme-toggle-btn .light-icon {
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .education-card::before {
