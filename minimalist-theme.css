@@ -19,22 +19,7 @@
     z-index: 2; /* Text above particles */
 }
 
-/* Typography Updates with Soft Gold */
-.hero-title {
-    font-family: 'Open Sans Condensed', sans-serif; /* Changed to Condensed */
-    font-weight: 700;
-    font-size: 5rem; /* Larger */
-    line-height: 1;
-    margin-bottom: 2rem;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    /* Soft Gold Gradient Text */
-    background: linear-gradient(135deg, #f3eacb 0%, #d4af37 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); /* Subtle glow */
-}
+/* Subtitle updates */
 
 /* =========================================
    CINEMATIC PRELOADER (APPLE-STYLE REVEAL)
