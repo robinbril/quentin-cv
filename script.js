@@ -30,9 +30,9 @@ function initParticles() {
     let width, height;
     let particles = [];
 
-    // Configuration - Subtle particles
-    const particleCount = window.innerWidth < 768 ? 8 : 15; // Much fewer particles
-    const moveSpeed = 0.1; // Slower movement
+    // Configuration - More subtle particles
+    const particleCount = window.innerWidth < 768 ? 10 : 20;
+    const moveSpeed = 0.15;
 
     function resize() {
         width = container.offsetWidth;
@@ -51,8 +51,8 @@ function initParticles() {
             this.y = Math.random() * height;
             this.vx = (Math.random() - 0.5) * moveSpeed;
             this.vy = (Math.random() - 0.5) * moveSpeed;
-            this.size = Math.random() * 1.2 + 0.5; // Smaller particles
-            this.alpha = Math.random() * 0.15 + 0.05; // Much more subtle
+            this.size = Math.random() * 1.5 + 0.5;
+            this.alpha = Math.random() * 0.2 + 0.05;
         }
 
         update() {
@@ -66,7 +66,7 @@ function initParticles() {
         }
 
         draw() {
-            ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`; // Subtle white
+            ctx.fillStyle = `rgba(212, 175, 55, ${this.alpha})`; // Gold
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
