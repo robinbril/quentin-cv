@@ -20,20 +20,22 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="minimalist-theme.css">
+    <link rel="stylesheet" href="loader.css">
 
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body class="dark-theme">
-    <!-- Preloader -->
-    <div id="loader" class="loader">
-        <div class="particles">
-            <div class="p"></div><div class="p"></div><div class="p"></div>
-            <div class="p"></div><div class="p"></div><div class="p"></div>
-        </div>
-        <div class="loader-content-wrap">
-            <div class="logo">QH.</div>
+    <!-- Premium Loading Screen -->
+    <div id="premium-loader" class="premium-loader">
+        <div class="loader-background"></div>
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="logo-text">QH</span><span class="logo-dot">.</span>
+            </div>
+            <div class="loader-shimmer"></div>
+            <div class="loader-subtitle">Business Consultant AI</div>
         </div>
     </div>
 
@@ -289,6 +291,7 @@
 
     <script src="script.js"></script>
     <script src="hero-field.js"></script>
+    <script src="loader.js"></script>
     <script>
         lucide.createIcons();
     </script>
