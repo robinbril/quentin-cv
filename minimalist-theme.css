@@ -1486,3 +1486,29 @@ a.cta-secondary-btn:hover {
     letter-spacing: 0.15em !important;
     text-transform: uppercase !important;
 }
+
+/* =========================================
+   CLEANER HERO FIX
+   ========================================= */
+
+/* Override gradient - use clean white */
+.hero-title {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #ffffff !important;
+    background-clip: unset !important;
+    color: #ffffff !important;
+    font-weight: 300 !important;
+    margin-top: 80px !important;
+    padding-top: 2rem !important;
+}
+
+/* Hero section proper height */
+#projects.section,
+.hero-section {
+    padding-top: 100px !important;
+}
+
+.minimalist-hero {
+    padding-top: 4rem !important;
+}
