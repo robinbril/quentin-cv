@@ -853,26 +853,29 @@
     width: 100%;
 }
 
-/* Logo "CW." Activation */
+/* Logo "CW." Activation - ELEGANT GOLD BALANCE */
 .loader .logo {
     font-family: 'Open Sans Condensed', sans-serif;
-    font-size: clamp(4rem, 9vw, 7rem); /* Smaller: 9vw/7rem (was 12vw/9rem) */
+    font-size: clamp(5rem, 12vw, 9rem);
     font-weight: 700;
     line-height: 1;
-    /* Soft Gold Gradient */
-    background: linear-gradient(135deg, #f3eacb 0%, #d4af37 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* Elegant balanced gold - not too bright, not too pale */
+    color: #c9a961 !important;
     
-    opacity: 0;
-    /* Fade In + Scale + Pulse (20% faster: 1.2s->1.0s, 2s->1.6s) */
+    /* Ensure visibility */
+    opacity: 1 !important;
+    transform: scale(1);
+    position: relative;
+    z-index: 100;
+    
+    /* Smooth animation */
     animation: 
-        fadeInScale 1.0s cubic-bezier(0.2, 1, 0.3, 1) forwards 0.2s,
-        logoPulse 1.6s ease-in-out infinite 1.2s;
+        logoSmoothEntrance 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.1s,
+        logoPulse 2s ease-in-out infinite 1.6s;
         
-    /* NO blur/drop-shadow for crisp appearance */
-    letter-spacing: -0.02em; /* Tighter spacing */
+    letter-spacing: -0.02em;
+    /* Subtle warm glow */
+    text-shadow: 0 0 45px rgba(201, 169, 97, 0.3);
 }
 
 /* Expanded Waveform - More Elegant */
@@ -983,7 +986,7 @@
    ULTRA LUXE HERO (Christiaan Style)
    ========================================= */
 
-/* 1. Deep Luxe Background + Enhanced Grain */
+/* 1. Deep Luxe Background + Dramatic Light Beams */
 .hero {
     background-color: #000000;
     /* Richer radial gradient - warmer center */
@@ -996,6 +999,38 @@
     overflow: hidden;
 }
 
+/* Dramatic Search Light Beams from Above */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 100%;
+    background: 
+        /* Center beam */
+        radial-gradient(ellipse 15% 80% at 50% 0%, 
+            rgba(255, 245, 200, 0.25) 0%, 
+            rgba(255, 240, 180, 0.12) 30%,
+            transparent 70%),
+        /* Left beam */
+        radial-gradient(ellipse 12% 70% at 30% 0%, 
+            rgba(255, 250, 220, 0.15) 0%, 
+            rgba(255, 245, 200, 0.08) 25%,
+            transparent 60%),
+        /* Right beam */
+        radial-gradient(ellipse 12% 70% at 70% 0%, 
+            rgba(255, 250, 220, 0.15) 0%, 
+            rgba(255, 245, 200, 0.08) 25%,
+            transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: screen;
+    opacity: 0.8;
+    animation: beamsPulse 8s ease-in-out infinite;
+}
+
 .hero-grain {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -1006,6 +1041,37 @@
     z-index: 2;
     mix-blend-mode: overlay;
 }
+
+/* Hero Particles - FORCED VISIBILITY */
+#hero-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 50 !important; /* Force to front */
+    pointer-events: none;
+}
+
+#hero-particles .p {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 240, 200, 0.9) !important; /* Bright warm white-gold */
+    border-radius: 50%;
+    box-shadow: 
+        0 0 6px rgba(255, 240, 200, 0.8),
+        0 0 12px rgba(255, 230, 180, 0.5); /* Double glow for visibility */
+    animation: floatUp 6s linear infinite;
+}
+
+#hero-particles .p:nth-child(1) { left: 15%; animation-duration: 8s; animation-delay: 0s; }
+#hero-particles .p:nth-child(2) { left: 35%; animation-duration: 10s; animation-delay: 2s; }
+#hero-particles .p:nth-child(3) { left: 55%; animation-duration: 7s; animation-delay: 1s; }
+#hero-particles .p:nth-child(4) { left: 75%; animation-duration: 9s; animation-delay: 3s; width: 2px; height: 2px; }
+#hero-particles .p:nth-child(5) { left: 25%; animation-duration: 11s; animation-delay: 1.5s; }
+#hero-particles .p:nth-child(6) { left: 65%; animation-duration: 8.5s; animation-delay: 0.5s; width: 4px; height: 4px; }
+#hero-particles .p:nth-child(7) { left: 45%; animation-duration: 9.5s; animation-delay: 2.5s; }
+#hero-particles .p:nth-child(8) { left: 85%; animation-duration: 10.5s; animation-delay: 1.2s; width: 2px; height: 2px; }
 
 .minimalist-hero {
     text-align: center;
@@ -1021,39 +1087,109 @@
     gap: 8rem; /* Massive breathing room (128px) */
 }
 
-/* 2. Massive Title (Pure Flat Soft Gold) */
+/* 2. Massive Title (Pure Flat Soft Gold - READABLE) */
 .hero-title {
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
-    /* Massive Impact Size (160-200px) */
-    font-size: clamp(6rem, 12vw, 12.5rem);
-    line-height: 0.9;
+    /* Optically balanced size */
+    font-size: clamp(5.5rem, 11vw, 11rem);
+    line-height: 1;
     margin: 0;
-    letter-spacing: 0.08em; /* Wide kerning for elegance */
+    letter-spacing: 0.06em; /* Balanced kerning */
     text-transform: uppercase;
     
-    /* Pure Soft Gold - NO gradient */
+    /* Pure Soft Gold with strong readability */
     color: #d4af37;
     
-    /* Very subtle glow for depth - NO blur */
-    text-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+    /* Strong text shadow for readability against spotlight */
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.8),
+        0 4px 12px rgba(0, 0, 0, 0.6),
+        0 0 60px rgba(212, 175, 55, 0.3);
+    
+    /* Perfect optical centering */
+    text-align: center;
+    display: block;
+    position: relative; /* For spotlight effect */
+    /* NO overflow hidden - prevents hard edges */
     
     opacity: 0;
     animation: titleLuxuryReveal 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards 0.2s,
                titleBreathePulse 3s ease-in-out infinite 1.5s;
 }
 
-/* 3. Refined Subtitle (Larger, Clean White) */
+/* SOFT ORGANIC SEARCHLIGHT - Wide & Smooth */
+.hero-title::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: 5%; /* Slightly wider positioning */
+    width: 90%; /* Wider to cover more text */
+    height: 200%;
+    background: 
+        /* Soft organic beam - no hard edges */
+        radial-gradient(ellipse 40% 90% at 50% 0%, 
+            rgba(255, 245, 220, 0.5) 0%,
+            rgba(255, 235, 190, 0.35) 20%,
+            rgba(255, 220, 160, 0.25) 40%,
+            rgba(255, 230, 180, 0.15) 60%,
+            transparent 85%
+        ),
+        /* Wide outer glow */
+        radial-gradient(ellipse 70% 95% at 50% 0%,
+            rgba(255, 240, 200, 0.2) 0%,
+            rgba(255, 230, 170, 0.1) 30%,
+            rgba(255, 220, 150, 0.05) 50%,
+            transparent 75%
+        );
+    pointer-events: none;
+    z-index: 10;
+    mix-blend-mode: soft-light; /* Softer blend */
+    filter: blur(20px); /* Heavy blur for smooth edges */
+    animation: softSearchlight 14s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+/* Ultra-soft secondary layer */
+.hero-title::after {
+    content: '';
+    position: absolute;
+    top: -130%;
+    left: 10%;
+    width: 80%;
+    height: 180%;
+    background: 
+        radial-gradient(ellipse 50% 92% at 50% 0%,
+            rgba(255, 250, 230, 0.25) 0%,
+            rgba(255, 240, 200, 0.12) 25%,
+            rgba(255, 230, 180, 0.06) 50%,
+            transparent 80%
+        );
+    pointer-events: none;
+    z-index: 9;
+    mix-blend-mode: overlay;
+    filter: blur(25px); /* Extra soft */
+    opacity: 0.4;
+    animation: 
+        softSearchlight 14s ease-in-out infinite,
+        subtleShimmer 4s ease-in-out infinite;
+    animation-delay: 1s, 0.8s;
+}
+
+/* 3. Refined Subtitle (Sleeker Typography) */
 .hero-subtitle {
     font-family: 'Open Sans', sans-serif;
-    font-size: clamp(1.4rem, 2vw, 2rem); /* Larger: 32-40px equivalent */
-    line-height: 1.7; /* More breathing room */
-    color: #ffffff !important;
+    font-size: clamp(1.15rem, 1.65vw, 1.6rem); /* Sleeker */
+    line-height: 1.75; /* Better readability */
+    color: rgba(255, 255, 255, 0.92) !important;
     font-weight: 300 !important;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.01em; /* Subtle tracking */
+    
     opacity: 0;
-    animation: subtitleReveal 1s ease forwards 1s;
+    animation: subtitleReveal 1s ease forwards 0.6s;
 }
 
 .subtitle-secondary {
@@ -1075,9 +1211,54 @@
     50% { transform: scale(1.008); } /* Micro breathe - very subtle */
 }
 
+/* Soft Searchlight Sweep - Wide & Gentle */
+@keyframes softSearchlight {
+    0% {
+        top: -150%;
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.5;
+    }
+    12% {
+        opacity: 1;
+    }
+    50% {
+        top: 60%;
+        opacity: 0.9;
+    }
+    54% {
+        opacity: 0.5;
+    }
+    58% {
+        opacity: 0;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* Subtle shimmer for realism */
+@keyframes subtleShimmer {
+    0%, 100% { 
+        opacity: 0.3;
+        filter: blur(25px);
+    }
+    50% { 
+        opacity: 0.5;
+        filter: blur(28px);
+    }
+}
+
 @keyframes subtitleReveal {
     0% { opacity: 0; transform: translateY(30px); }
     100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes beamsPulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
 }
 
 /* Scroll Indication */

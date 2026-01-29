@@ -65,8 +65,8 @@ function initParticles() {
             this.y = Math.random() * height;
             this.vx = (Math.random() - 0.5) * moveSpeed;
             this.vy = (Math.random() - 0.5) * moveSpeed;
-            this.size = Math.random() * 2;
-            this.alpha = Math.random() * 0.5 + 0.1;
+            this.size = Math.random() * 3 + 1; // Larger: 1-4px
+            this.alpha = Math.random() * 0.6 + 0.3; // More visible: 0.3-0.9
         }
 
         update() {
