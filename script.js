@@ -1,37 +1,20 @@
 // ==========================================
-// CINEMATIC PRELOADER
+// PRELOADER
 // ==========================================
-function startPreloader() {
-    const preloader = document.getElementById('preloader');
-    const loaderLine = document.getElementById('loader-line');
-    
-    if (!preloader) return;
-    
-    // Animate Line
-    if (loaderLine) {
-        // Simulate loading time
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    if (loader) {
         setTimeout(() => {
-            loaderLine.style.width = '100%';
-        }, 100);
-    }
-
-    // Fade out sequence
-    setTimeout(() => {
-        preloader.classList.add('fade-out');
-        setTimeout(() => {
-            preloader.style.display = 'none';
-            // Start particles after preloader
-            initParticles();
+            loader.classList.add('fade-out');
+            setTimeout(() => {
+                loader.style.display = 'none';
+                initParticles(); // Start particles only after load
+            }, 500);
         }, 800);
-    }, 2000); // 2 second display
-}
-
-// Start immediately if DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', startPreloader);
-} else {
-    startPreloader();
-}
+    } else {
+        initParticles(); // Fallback
+    }
+});
 
 // ==========================================
 // COSMIC PARTICLES SYSTEM
@@ -48,8 +31,7 @@ function initParticles() {
     let particles = [];
 
     // Configuration
-    const particleCount = 60;
-    const connectionDistance = 0; // No lines, just dust
+    const particleCount = window.innerWidth < 768 ? 30 : 60; // Less on mobile
     const moveSpeed = 0.2;
 
     function resize() {
@@ -61,19 +43,22 @@ function initParticles() {
 
     class Particle {
         constructor() {
+            this.reset();
+        }
+
+        reset() {
             this.x = Math.random() * width;
             this.y = Math.random() * height;
             this.vx = (Math.random() - 0.5) * moveSpeed;
             this.vy = (Math.random() - 0.5) * moveSpeed;
-            this.size = Math.random() * 3 + 1; // Larger: 1-4px
-            this.alpha = Math.random() * 0.6 + 0.3; // More visible: 0.3-0.9
+            this.size = Math.random() * 2 + 1; 
+            this.alpha = Math.random() * 0.5 + 0.2;
         }
 
         update() {
             this.x += this.vx;
             this.y += this.vy;
 
-            // Wrap around screen
             if (this.x < 0) this.x = width;
             if (this.x > width) this.x = 0;
             if (this.y < 0) this.y = height;
@@ -81,7 +66,7 @@ function initParticles() {
         }
 
         draw() {
-            ctx.fillStyle = `rgba(212, 175, 55, ${this.alpha})`; // Gold dust
+            ctx.fillStyle = `rgba(212, 175, 55, ${this.alpha})`; // Gold
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -90,6 +75,7 @@ function initParticles() {
 
     function init() {
         resize();
+        particles = [];
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
@@ -105,61 +91,53 @@ function initParticles() {
         requestAnimationFrame(animate);
     }
 
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', () => {
+        resize();
+        init();
+    });
     init();
 }
 
 // ==========================================
-// CURSOR GLOW EFFECT
+// MOBILE MENU TOGGLE
+// ==========================================
+const mobileBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileBtn && navLinks) {
+    mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        
+        // Change icon based on state
+        const icon = mobileBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            // Close icon logic if you want to switch icons
+            // For now simple toggle
+        }
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+}
+
+// ==========================================
+// CURSOR GLOW (Desktop Only)
 // ==========================================
 const cursorGlow = document.querySelector('.cursor-glow');
-
-if (cursorGlow) {
+if (cursorGlow && window.matchMedia("(pointer: fine)").matches) {
     document.addEventListener('mousemove', (e) => {
         requestAnimationFrame(() => {
             cursorGlow.style.left = e.clientX + 'px';
             cursorGlow.style.top = e.clientY + 'px';
         });
     });
+} else if (cursorGlow) {
+    cursorGlow.style.display = 'none'; // Disable on touch
 }
-
-// ==========================================
-// BUTTON HOVER SOUNDS (Professional & Subtle)
-// ==========================================
-let audioContext;
-
-function initAudioContext() {
-    if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    return audioContext;
-}
-
-function playHoverSound() {
-    try {
-        const ctx = initAudioContext();
-        const oscillator = ctx.createOscillator();
-        const gainNode = ctx.createGain();
-
-        oscillator.connect(gainNode);
-        gainNode.connect(ctx.destination);
-
-        oscillator.frequency.value = 400; // Lower pitch for elegance
-        oscillator.type = 'sine';
-
-        gainNode.gain.setValueAtTime(0.05, ctx.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
-
-        oscillator.start(ctx.currentTime);
-        oscillator.stop(ctx.currentTime + 0.15);
-    } catch (error) {
-        // Audio context may be blocked until user interaction
-    }
-}
-
-document.querySelectorAll('a, button, .archive-item, .hero-project').forEach(el => {
-    el.addEventListener('mouseenter', () => playHoverSound());
-});
 
 // ==========================================
 // SMOOTH SCROLL
@@ -171,34 +149,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (targetId === '#') return;
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+            // Offset for fixed header
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
         }
     });
 });
 
-// ==========================================
-// FADE-IN ANIMATION
-// ==========================================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const fadeObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            fadeObserver.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.hero-project, .archive-item, .timeline-item').forEach(el => {
-    el.classList.add('fade-in-section');
-    fadeObserver.observe(el);
-});
-
-// Initialize Lucide icons
+// Initialize Icons
 if (typeof lucide !== 'undefined') {
     lucide.createIcons();
 }
