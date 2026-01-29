@@ -1543,3 +1543,38 @@ h1.hero-title::after {
     display: none !important;
     content: none !important;
 }
+
+/* =========================================
+   FIX TIMELINE OVERLAP
+   ========================================= */
+
+.timeline-item {
+    position: relative !important;
+    padding-left: 0 !important;
+    margin-bottom: 2.5rem !important;
+}
+
+.timeline-date {
+    position: relative !important;
+    display: block !important;
+    margin-bottom: 1rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #d4af37 !important;
+    letter-spacing: 0.05em !important;
+}
+
+.timeline-content {
+    position: relative !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+}
+
+/* Remove timeline line if causing issues */
+.timeline::before {
+    display: none !important;
+}
+
+.timeline-item::before {
+    display: none !important;
+}
