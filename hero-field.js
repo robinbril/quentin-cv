@@ -28,9 +28,9 @@ if (canvas) {
       Math.max(w, h) * 0.8
     );
     
-    g.addColorStop(0, "rgba(120,140,180,0.12)");
-    g.addColorStop(0.4, "rgba(40,50,70,0.12)");
-    g.addColorStop(1, "rgba(10,12,16,0.9)");
+    g.addColorStop(0, "rgba(80,100,140,0.08)");
+    g.addColorStop(0.4, "rgba(30,40,60,0.08)");
+    g.addColorStop(1, "rgba(0,0,0,0.95)");
     
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, w, h);
