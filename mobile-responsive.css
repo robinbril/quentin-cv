@@ -1,0 +1,442 @@
+/* =========================================
+   MOBILE RESPONSIVE ENHANCEMENTS
+   Premium CV - Quentin Hanssen
+   ========================================= */
+
+/* =========================================
+   MOBILE MENU - Full Screen Overlay
+   ========================================= */
+
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.mobile-menu-btn i,
+.mobile-menu-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+@media (max-width: 900px) {
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-links a {
+        font-size: 1.5rem !important;
+        letter-spacing: 0.1em;
+    }
+    
+    .nav-links .btn-primary {
+        margin-top: 1rem;
+        padding: 1rem 3rem !important;
+    }
+    
+    .navbar {
+        padding: 1rem 0 !important;
+    }
+    
+    .nav-container {
+        padding: 0 1.5rem !important;
+    }
+}
+
+/* =========================================
+   HERO SECTION - Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 100svh; /* Use svh for mobile browsers */
+        padding-top: 80px;
+    }
+    
+    .hero-content,
+    .minimalist-hero {
+        padding: 2rem 1.5rem !important;
+        gap: 2rem !important;
+    }
+    
+    .hero-title,
+    h1.hero-title {
+        font-size: clamp(2rem, 9vw, 3rem) !important;
+        letter-spacing: 0.05em !important;
+        line-height: 1.15 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.95rem, 4vw, 1.15rem) !important;
+        line-height: 1.8 !important;
+        padding: 0 0.5rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .hero-subtitle br {
+        display: none; /* Remove line breaks on mobile */
+    }
+    
+    .scroll-indicator {
+        bottom: 25px;
+    }
+    
+    /* Reduce particle count on mobile (handled in JS) */
+    #hero-field {
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title,
+    h1.hero-title {
+        font-size: clamp(1.75rem, 10vw, 2.5rem) !important;
+    }
+}
+
+/* =========================================
+   SECTIONS - Mobile Spacing
+   ========================================= */
+
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 1.25rem;
+    }
+    
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.75rem !important;
+    }
+}
+
+/* =========================================
+   ABOUT SECTION - Mobile
+   ========================================= */
+
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+    
+    .about-content {
+        order: 1;
+    }
+    
+    .about-card {
+        order: 2;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        text-align: center;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* =========================================
+   EXPERIENCE TIMELINE - Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 0 !important;
+        border-left: none !important;
+        margin: 2rem auto !important;
+    }
+    
+    .timeline-item {
+        flex-direction: column !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    .timeline-date {
+        width: 100% !important;
+        text-align: left !important;
+        padding-right: 0 !important;
+        margin-bottom: 1rem !important;
+        padding-top: 0 !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .timeline-content.glow-card {
+        margin-left: 0 !important;
+        padding: 1.5rem !important;
+    }
+    
+    .role-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.3rem !important;
+    }
+    
+    .role-header h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    .company {
+        font-size: 0.9rem !important;
+    }
+    
+    .role-description li {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .tags {
+        gap: 0.5rem !important;
+    }
+    
+    .tags span {
+        font-size: 0.75rem !important;
+    }
+}
+
+/* =========================================
+   SKILLS SECTION - Mobile
+   ========================================= */
+
+@media (max-width: 900px) {
+    .minimalist-skills {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+        text-align: left !important;
+    }
+    
+    .skill-column {
+        text-align: left;
+    }
+    
+    .skill-column h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid #d4af37;
+        display: inline-block;
+    }
+    
+    .clean-list li {
+        padding: 0.5rem 0;
+    }
+}
+
+/* =========================================
+   EDUCATION SECTION - Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+    .minimalist-education {
+        padding: 2rem 1.5rem !important;
+        margin: 0 1rem !important;
+        max-width: calc(100% - 2rem) !important;
+    }
+    
+    .edu-school {
+        font-size: 1.25rem !important;
+    }
+    
+    .edu-degree {
+        font-size: 1rem !important;
+    }
+    
+    .edu-year {
+        font-size: 0.85rem !important;
+    }
+    
+    .edu-desc {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* =========================================
+   CONTACT SECTION - Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+    .contact-header h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .primary-cta {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        width: 100%;
+    }
+    
+    .cta-primary-btn,
+    .cta-secondary-btn,
+    a.cta-primary-btn,
+    a.cta-secondary-btn {
+        width: 100% !important;
+        max-width: 300px !important;
+        justify-content: center !important;
+        margin-left: 0 !important;
+    }
+    
+    .secondary-options {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .contact-divider {
+        margin: 2rem 0 !important;
+    }
+}
+
+/* =========================================
+   NAVBAR - Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto !important;
+        min-height: 65px;
+    }
+    
+    .nav-container {
+        height: auto !important;
+        min-height: 65px;
+        padding: 0 1rem !important;
+    }
+    
+    .navbar .logo {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* =========================================
+   LOADER - Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 3.5rem !important;
+    }
+    
+    .logo-dot {
+        font-size: 4rem !important;
+    }
+    
+    .loader-subtitle {
+        font-size: 0.85rem !important;
+        letter-spacing: 0.1em !important;
+    }
+}
+
+/* =========================================
+   GENERAL MOBILE FIXES
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Prevent horizontal scroll */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    /* Better touch targets */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Reduce animations on mobile for performance */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+    
+    /* Fix for iOS Safari 100vh issue */
+    .hero-section {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* =========================================
+   TABLET BREAKPOINT (768px - 1024px)
+   ========================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .section {
+        padding: 4rem 2rem;
+    }
+    
+    .hero-title,
+    h1.hero-title {
+        font-size: clamp(2.5rem, 6vw, 3.5rem) !important;
+    }
+    
+    .work-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .minimalist-skills {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* =========================================
+   LARGE SCREENS (1400px+)
+   ========================================= */
+
+@media (min-width: 1400px) {
+    .section {
+        max-width: 1400px;
+    }
+    
+    .hero-title,
+    h1.hero-title {
+        font-size: 5.5rem !important;
+    }
+}
