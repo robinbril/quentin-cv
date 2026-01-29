@@ -1083,8 +1083,8 @@
     letter-spacing: 0.06em; /* Balanced kerning */
     text-transform: uppercase;
     
-    /* Warm Champagne Ivory - subtiel goudgeel */
-    color: #faf6e8 !important; /* Warme ivoor met gouden ondertoon */
+    /* Warme goudgele tint - net iets geler */
+    color: #f8f0d8 !important; /* Meer goudgeel accent */
     
     /* Strong text shadow for readability against spotlight */
     text-shadow: 
