@@ -110,6 +110,41 @@ function initParticles() {
 }
 
 // ==========================================
+// PREMIUM THEME TOGGLE
+// ==========================================
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    if (!themeToggle) {
+        console.warn('Theme toggle button not found');
+        return;
+    }
+    
+    // Check for saved theme preference or default to 'dark'
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    body.classList.remove('dark-theme', 'light-theme');
+    body.classList.add(`${currentTheme}-theme`);
+    
+    // Toggle theme
+    themeToggle.addEventListener('click', () => {
+        const isDark = body.classList.contains('dark-theme');
+        
+        // Add smooth transition
+        body.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+        
+        // Toggle classes
+        body.classList.remove('dark-theme', 'light-theme');
+        body.classList.add(isDark ? 'light-theme' : 'dark-theme');
+        
+        // Save preference
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        
+        console.log(`Theme switched to: ${isDark ? 'light' : 'dark'}`);
+    });
+}
+
+// ==========================================
 // CURSOR GLOW EFFECT
 // ==========================================
 const cursorGlow = document.querySelector('.cursor-glow');
@@ -198,8 +233,14 @@ document.querySelectorAll('.hero-project, .archive-item, .timeline-item').forEac
     fadeObserver.observe(el);
 });
 
+// Initialize theme toggle when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
+} else {
+    initThemeToggle();
+}
+
 // Initialize Lucide icons
 if (typeof lucide !== 'undefined') {
     lucide.createIcons();
 }
-
