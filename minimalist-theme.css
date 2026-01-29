@@ -1098,8 +1098,8 @@
     letter-spacing: 0.06em; /* Balanced kerning */
     text-transform: uppercase;
     
-    /* Pure Soft Gold with strong readability */
-    color: #ffffff; /* Wit ipv goud voor dark theme */
+    /* Pure White for dark theme - clean & modern */
+    color: #ffffff !important; /* Force wit */
     
     /* Strong text shadow for readability against spotlight */
     text-shadow: 
