@@ -1316,3 +1316,59 @@
     align-items: center;
     gap: 0.5rem;
 }
+
+/* =========================================
+   FIXES: Button styling & Education centering
+   ========================================= */
+
+/* Style the secondary CTA button to match primary */
+.cta-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.cta-secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Primary CTA container - center buttons */
+.primary-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Education section - center content properly */
+.minimalist-education {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+}
+
+.edu-item {
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.edu-desc {
+    text-align: center !important;
+    margin-top: 1rem !important;
+}
