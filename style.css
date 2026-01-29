@@ -658,15 +658,15 @@ body.light-theme .theme-toggle-btn .light-icon {
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 6vw, 7rem); /* Massive responsive size */
+    font-size: clamp(2rem, 5vw, 5rem); /* Smaller font size */
     line-height: 1;
     margin-bottom: 2rem;
     letter-spacing: -0.02em;
     font-weight: 800;
     color: #fff;
     text-transform: uppercase;
-    text-shadow: 0 0 30px rgba(212, 175, 55, 0.2), 0 0 60px rgba(212, 175, 55, 0.1); /* Gold Glow */
-    font-family: 'Open Sans Condensed', sans-serif; /* Explicitly requested font */
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.2), 0 0 60px rgba(212, 175, 55, 0.1);
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .hero-subtitle {
@@ -1446,8 +1446,9 @@ body.light-theme .theme-toggle-btn .light-icon {
    EDUCATION SECTION
    ========================================== */
 .education-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
     margin-top: 3rem;
     max-width: 800px;
@@ -1469,6 +1470,8 @@ body.light-theme .theme-toggle-btn .light-icon {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%; /* Zorg dat de kaart de breedte van de container pakt */
+    max-width: 600px; /* Maar niet te breed wordt */
 }
 
 .education-card::before {

@@ -1077,7 +1077,7 @@
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
     /* Optically balanced size */
-    font-size: clamp(5.5rem, 11vw, 11rem);
+    font-size: clamp(3rem, 7vw, 7rem); /* Smaller font size */
     line-height: 1;
     margin: 0;
     letter-spacing: 0.06em; /* Balanced kerning */
