@@ -1,0 +1,298 @@
+/* =========================================
+   ADVANCED EFFECTS - Award-Grade Upgrades
+   Premium CV - Quentin Hanssen
+   ========================================= */
+
+/* =========================================
+   GLASSMORPHISM CARDS
+   ========================================= */
+
+.glow-card,
+.timeline-content.glow-card,
+.about-card.glow-card {
+    background: rgba(15, 15, 15, 0.7) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.glow-card:hover,
+.timeline-content.glow-card:hover {
+    background: rgba(20, 20, 20, 0.8) !important;
+    border-color: rgba(212, 175, 55, 0.2) !important;
+}
+
+/* =========================================
+   VARIABLE FONT - GEIST
+   ========================================= */
+
+@font-face {
+    font-family: 'Geist';
+    src: url('https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Apply Geist to key elements */
+.hero-title,
+h1.hero-title,
+.section-header h2,
+.navbar .logo {
+    font-family: 'Geist', 'Inter', -apple-system, sans-serif !important;
+}
+
+/* =========================================
+   FLUID TYPOGRAPHY - Mouse Responsive
+   ========================================= */
+
+.hero-title,
+h1.hero-title {
+    --base-weight: 300;
+    --hover-weight: 500;
+    font-weight: var(--base-weight);
+    font-variation-settings: 'wght' var(--base-weight);
+    transition: font-variation-settings 1.5s cubic-bezier(0.2, 1, 0.3, 1),
+                font-weight 1.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* JS will update --title-weight based on mouse position */
+.hero-title[data-weight] {
+    font-variation-settings: 'wght' var(--title-weight, 300);
+}
+
+/* =========================================
+   ENHANCED HERO CANVAS GLOW
+   ========================================= */
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(212, 175, 55, 0.03) 0%,
+        rgba(40, 50, 70, 0.02) 40%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 2;
+    animation: ambient-glow 8s ease-in-out infinite;
+}
+
+@keyframes ambient-glow {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+/* =========================================
+   CARD DEPTH LAYERS
+   ========================================= */
+
+.minimalist-education {
+    background: rgba(10, 10, 10, 0.6) !important;
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+}
+
+/* =========================================
+   SUBTLE NOISE TEXTURE OVERLAY
+   ========================================= */
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.015;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* =========================================
+   SMOOTH PAGE TRANSITIONS
+   ========================================= */
+
+.section {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: section-reveal 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+.section:nth-child(1) { animation-delay: 0.1s; }
+.section:nth-child(2) { animation-delay: 0.2s; }
+.section:nth-child(3) { animation-delay: 0.3s; }
+.section:nth-child(4) { animation-delay: 0.4s; }
+.section:nth-child(5) { animation-delay: 0.5s; }
+.section:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes section-reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   MAGNETIC BUTTON EFFECT (via JS)
+   ========================================= */
+
+.cta-primary-btn,
+.cta-secondary-btn,
+.nav-links .btn-primary {
+    transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1),
+                box-shadow 0.4s ease,
+                background 0.3s ease,
+                color 0.3s ease;
+}
+
+/* =========================================
+   STAT NUMBER GLOW
+   ========================================= */
+
+.stat-number {
+    position: relative;
+}
+
+.stat-number::after {
+    content: attr(data-value);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #d4af37;
+    filter: blur(20px);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* =========================================
+   TIMELINE CARD ENTRANCE
+   ========================================= */
+
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.timeline-item.visible {
+    animation: timeline-slide 0.6s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+@keyframes timeline-slide {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =========================================
+   HOVER GLOW EFFECT ON SKILLS
+   ========================================= */
+
+.skill-column {
+    position: relative;
+}
+
+.skill-column::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(
+        circle at center,
+        rgba(212, 175, 55, 0.1) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    border-radius: 16px;
+}
+
+.skill-column:hover::before {
+    opacity: 1;
+}
+
+/* =========================================
+   CONTACT SECTION GLOW
+   ========================================= */
+
+#contact {
+    position: relative;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+        circle,
+        rgba(212, 175, 55, 0.08) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+/* =========================================
+   REDUCED MOTION SUPPORT
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    body::before {
+        display: none;
+    }
+}
+
+/* =========================================
+   MOBILE: Disable heavy effects
+   ========================================= */
+
+@media (max-width: 768px) {
+    body::before {
+        display: none; /* No noise on mobile */
+    }
+    
+    .glow-card,
+    .timeline-content.glow-card,
+    .minimalist-education {
+        backdrop-filter: blur(8px); /* Lighter blur */
+        -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .hero-section::after {
+        display: none; /* No ambient glow on mobile */
+    }
+    
+    .section {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}

@@ -370,6 +370,57 @@
 }
 
 /* =========================================
+   INFO LIST - Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+    .info-list {
+        padding: 0;
+    }
+    
+    .info-list li {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* =========================================
+   ABOUT CARD - Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+    .about-card.glow-card {
+        padding: 1.5rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1.15rem;
+    }
+}
+
+/* =========================================
+   ANIMATIONS - Optimize for Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Faster animations on mobile */
+    .hero-title,
+    h1.hero-title {
+        animation-duration: 1s !important;
+    }
+    
+    .hero-subtitle {
+        animation-duration: 0.8s !important;
+        animation-delay: 0.3s !important;
+    }
+    
+    /* Reduce canvas complexity */
+    #hero-field {
+        opacity: 0.5;
+    }
+}
+
+/* =========================================
    GENERAL MOBILE FIXES
    ========================================= */
 
