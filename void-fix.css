@@ -1,0 +1,47 @@
+/* =========================================
+   VOID FIX - The Anti-Template Override
+   ========================================= */
+
+/* 1. FORCE EDGE-TO-EDGE BLACK (Fixes Zoom Borders) */
+html,
+body {
+    background-color: #050505 !important;
+    min-height: 100vh !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+/* 2. KILL THE WITZ-TEMPLATE VIBES */
+.hero-section,
+.section,
+main,
+#projects {
+    background: transparent !important; /* Let the Nano Canvas show through */
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Remove old gradients/images that looked cheap */
+body::before,
+.hero-section::after {
+    display: none !important;
+}
+
+/* 3. ENSURE CANVAS IS BACKGROUND */
+#nano-canvas {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: #030303; /* Deepest Void */
+}
+
+/* 4. CONTENT CONTRAST */
+.hero-title,
+.hero-subtitle {
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8); /* Lift text off the void */
+}
