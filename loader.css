@@ -1,5 +1,5 @@
 /* =========================================
-   PREMIUM LOADING SCREEN - Gold Shimmer Transition
+   PREMIUM LOADING SCREEN - Clean Transition
    ========================================= */
 
 .premium-loader {
@@ -12,8 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 1s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #000000;
 }
 
 .loader-background {
@@ -30,12 +29,6 @@
     position: relative;
     z-index: 2;
     text-align: center;
-    animation: breathe 2s ease-in-out infinite;
-}
-
-@keyframes breathe {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.02); opacity: 0.95; }
 }
 
 .loader-logo {
@@ -45,10 +38,10 @@
 }
 
 .logo-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 5rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
     color: #ffffff;
     text-transform: uppercase;
     position: relative;
@@ -56,7 +49,7 @@
 }
 
 .logo-dot {
-    font-size: 6rem;
+    font-size: 5rem;
     color: #d4af37;
     position: relative;
     z-index: 2;
@@ -64,78 +57,80 @@
 }
 
 @keyframes pulse-dot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.7; transform: scale(1.1); }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
 }
 
-/* Gold Shimmer Effect */
+/* Subtle shimmer - no radial gradient glow */
 .loader-shimmer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(
-        circle,
-        rgba(212, 175, 55, 0.3) 0%,
-        rgba(212, 175, 55, 0.1) 30%,
-        transparent 70%
-    );
-    animation: shimmer-pulse 2s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes shimmer-pulse {
-    0%, 100% {
-        opacity: 0.3;
-        transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-        opacity: 0.6;
-        transform: translate(-50%, -50%) scale(1.2);
-    }
+    display: none; /* Remove the ugly gold glow */
 }
 
 .loader-subtitle {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #888;
-    letter-spacing: 0.15em;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #666;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-top: 1rem;
-    animation: fade-in-out 2s ease-in-out infinite;
+    margin-top: 0.5rem;
 }
 
-@keyframes fade-in-out {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+/* =========================================
+   EXIT ANIMATION - Fast & Clean
+   ========================================= */
+
+.premium-loader.hiding {
+    animation: loader-exit 0.5s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
-/* Fade Out States */
-.loader-logo.fade-out {
-    animation: logo-fade-out 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes logo-fade-out {
+@keyframes loader-exit {
     0% {
         opacity: 1;
         transform: scale(1);
     }
     100% {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(1.02);
+        visibility: hidden;
     }
 }
 
-.premium-loader.hiding {
-    opacity: 0;
-    visibility: hidden;
+/* Kill all animations when hiding */
+.premium-loader.hiding * {
+    animation: none !important;
+}
+
+.premium-loader.hiding .loader-content {
+    animation: content-fade 0.3s ease-out forwards;
+}
+
+@keyframes content-fade {
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 }
 
 /* Prevent body scroll during loading */
 body.loading {
     overflow: hidden;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 3rem;
+    }
+    
+    .logo-dot {
+        font-size: 3.5rem;
+    }
+    
+    .loader-subtitle {
+        font-size: 0.7rem;
+    }
 }
