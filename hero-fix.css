@@ -1,0 +1,154 @@
+/* =========================================
+   HERO FIX - Clean Layout
+   Removes stray elements, fixes scroll indicator
+   ========================================= */
+
+/* Remove any stray lines/borders from hero */
+.hero-section *::before,
+.hero-section *::after {
+    border: none !important;
+}
+
+/* Ensure no decorative lines in hero content */
+.minimalist-hero .line,
+.hero-content .line,
+.hero-section .line {
+    display: none !important;
+}
+
+/* Hero title - no underlines */
+.hero-title,
+h1.hero-title {
+    border: none !important;
+    text-decoration: none !important;
+}
+
+/* Hero subtitle - clean */
+.hero-subtitle {
+    border: none !important;
+    text-decoration: none !important;
+    position: relative;
+}
+
+.hero-subtitle::before,
+.hero-subtitle::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* =========================================
+   SCROLL INDICATOR - Proper Positioning
+   ========================================= */
+
+/* Desktop: Absolute bottom of hero */
+.scroll-indicator {
+    position: absolute !important;
+    bottom: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    z-index: 100 !important;
+}
+
+.scroll-indicator span {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.7rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.scroll-indicator i,
+.scroll-indicator svg {
+    width: 18px !important;
+    height: 18px !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    stroke: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* =========================================
+   HERO CONTENT - Better Spacing
+   ========================================= */
+
+.hero-content,
+.minimalist-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0 2rem !important;
+    min-height: calc(100vh - 80px) !important;
+    padding-bottom: 80px !important; /* Space for scroll indicator */
+}
+
+.hero-title,
+h1.hero-title {
+    margin-bottom: 1.5rem !important;
+}
+
+.hero-subtitle {
+    margin-bottom: 0 !important; /* Scroll indicator is absolute */
+    max-width: 600px !important;
+}
+
+/* =========================================
+   MOBILE FIXES
+   ========================================= */
+
+@media (max-width: 768px) {
+    .hero-content,
+    .minimalist-hero {
+        padding: 2rem 1.5rem !important;
+        padding-bottom: 100px !important;
+        min-height: calc(100svh - 65px) !important;
+    }
+    
+    .scroll-indicator {
+        bottom: 25px !important;
+    }
+    
+    .hero-title,
+    h1.hero-title {
+        font-size: clamp(2rem, 8vw, 3rem) !important;
+        line-height: 1.15 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem) !important;
+        line-height: 1.7 !important;
+        max-width: 90% !important;
+    }
+    
+    /* Remove line break on mobile */
+    .hero-subtitle br {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content,
+    .minimalist-hero {
+        padding: 1.5rem 1rem !important;
+        padding-bottom: 90px !important;
+    }
+    
+    .hero-title,
+    h1.hero-title {
+        font-size: clamp(1.8rem, 9vw, 2.5rem) !important;
+    }
+    
+    .scroll-indicator {
+        bottom: 20px !important;
+    }
+    
+    .scroll-indicator span {
+        font-size: 0.6rem !important;
+    }
+}
